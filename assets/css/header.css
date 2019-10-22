@@ -41,6 +41,7 @@ header a img {
     background: inherit;
     padding: 0;
     margin: 0;
+    border-left: 1px solid darkgrey;
 }
 
 .menu-item, .menu-item a, .dropbtn {
@@ -50,10 +51,6 @@ header a img {
     text-decoration: none;
     font-weight: bold;
     color: #00558a;
-}
-
-header .menu-item_dropdown-content a {
-    color: #000000;
 }
 
 .menu-item_dropdown-content {
