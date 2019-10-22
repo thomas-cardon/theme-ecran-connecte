@@ -2,6 +2,9 @@
 
 include_once 'inc/customizer/back-office.php';
 
+define( ‘WP_AUTO_UPDATE_CORE’, true );
+
+
 /**
  * Used by hook: 'customize_preview_init'
  *
