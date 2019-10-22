@@ -8,8 +8,6 @@
 <div id="footer-right">
         <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer droite') ) : endif; ?>
 </div>
-
-
         <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer') ) : endif; ?>
     <?php wp_footer(); ?>
 </footer>

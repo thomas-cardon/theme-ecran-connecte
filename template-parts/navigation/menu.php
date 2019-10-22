@@ -41,6 +41,7 @@ if(function_exists('downloadFileICS_func')) {
 
     <?php if(! in_array("television", $current_user->roles)) { ?>
         <nav class="menu" id="myMenu">
+            <a href="javascript:void(0);" style="font-size:30px;" class="icon" onclick="switchMenu()">&#9776;</a>
             <?php if (!is_user_logged_in()) { ?>
                 <a class="menu-item" href="<?php echo wp_login_url(); ?>">CONNEXION</a>
                 <a class="menu-item" href="<?php echo $linkInscrip; ?>">S'INSCRIRE</a>
@@ -94,7 +95,6 @@ if(function_exists('downloadFileICS_func')) {
                 } ?>
                 <a class="menu-item" href="<?php echo $linkAccount; ?>">MON COMPTE</a>
                 <a class="menu-item" href="<?php echo wp_logout_url(home_url()); ?>">DÉCONNEXION</a>
-                <a href="javascript:void(0);" style="font-size:30px;" class="icon" onclick="switchMenu()">&#9776;</a>
             <?php } ?>
         </nav>
     <?php } else {?>
