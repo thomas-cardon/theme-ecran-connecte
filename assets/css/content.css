@@ -82,7 +82,7 @@ input[type=button], input[type=submit], input[type=reset], button {
     }
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1000px) {
 
     #content {
         margin-right: 5%;
