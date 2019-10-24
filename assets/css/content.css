@@ -35,10 +35,23 @@ h1 {
     letter-spacing: 2px;
     font-family: "Titillium Web", sans-serif;
     color: #00558a;
-    margin-top: 0;
+    margin-top: 20px;
     margin-bottom: .5rem;
     font-style: normal;
     font-weight: 400;
+}
+
+h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: "Titillium Web", sans-serif;
+    color: #00558a;
+    margin-top: 10px;
+    margin-bottom: .5rem;
+    font-style: normal;
+    font-weight: 300;
 }
 
 table {
@@ -84,11 +97,13 @@ input[type=button], input[type=submit], input[type=reset], button {
 @media (max-width: 1000px) {
 
     #content {
+        float: none;
         margin-right: 5%;
         margin-left: 5%;
     }
 
     #content-twocolumns {
+        float: none;
         width: 90%;
         margin-right: 5%;
         margin-left: 5%;
