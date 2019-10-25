@@ -57,6 +57,22 @@ a:focus, a:hover {
 }
 
 /*__form__*/
+form {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+form input{
+    margin : 3px;
+}
+form button{
+    margin : 3px;
+}
+
 th {font-size : 120%;}
 
 .tdcentered {text-align: center;}
@@ -65,13 +81,6 @@ th {font-size : 120%;}
 td img {
     max-width: 75px;
     max-height: 75px;
-}
-
-form input{
-    margin : 3px;
-}
-form button{
-    margin : 3px;
 }
 
 @media (max-width: 1000px) {

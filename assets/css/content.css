@@ -74,6 +74,7 @@ input[type=button], input[type=submit], input[type=reset], button {
     text-transform: uppercase;
     border: none;
     overflow: visible;
+    border-radius: 5px;
 }
 
 @media (max-width: 800px) {

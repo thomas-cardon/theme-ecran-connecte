@@ -17,6 +17,7 @@
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
     <script src="/wp-content/themes/theme-ecran-connecte/assets/js/jquery-3.3.1.min.js"></script>
     <script src="/wp-content/themes/theme-ecran-connecte/assets/js/jquery-ui.min.js"></script>
+    <script src="/wp-content/themes/theme-ecran-connecte/assets/js/refresh.js"></script>
     <?php if ( wp_is_mobile() ) { ?> <link rel="stylesheet" href="/wp-content/themes/TvConnecteeAmu/assets/css/mobile.css"> <?php } ?>
     <?php wp_get_archives('type=monthly&format=link'); ?> <?php //comments_popup_script(); <?php wp_head(); ?>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
