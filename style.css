@@ -1,8 +1,8 @@
 /*
-    Theme Name: TvConnecteeAmu
+    Theme Name: Theme écran connecté
     GitHub Theme URI: https://github.com/Nicolas-Rohrbach/theme-ecran-connecte
     Description: Thème pour ce site aux couleurs de l'AMU
-    Version: 1.3
+    Version: 1.3.2
     Licence: GNU General Public License v2 ou ultérieure
     Licence URI: http://www.gnu.org/licenses/gpl-2.0.html
     Author: Léa Arnaud & Nicolas Rohrbach
@@ -53,6 +53,7 @@ a:focus, a:hover {
     width: auto;
     padding: 10px;
     background-color: #EEEEEE;
+    opacity: 50%;
 }
 
 /*__form__*/
@@ -78,27 +79,32 @@ form button{
     #content {
         margin-right: 5%;
         margin-left: 5%;
+        float: none;
     }
 
     #content-twocolumns {
         width: 90%;
+        float: none;
         margin-right: 5%;
         margin-left: 5%;
     }
     /* SIDEBAR */
     #sidebar-left {
+        float: none;
         margin-top: 1%;
         width: 100%;
         border-top: 1px solid darkgrey;
     }
 
     #sidebar-right {
+        float: none;
         margin-top: 1%;
         width: 100%;
         border-top: 1px solid darkgrey;
     }
 
     #footer-left {
+        float: none;
         width: 100%;
     }
 
@@ -115,64 +121,7 @@ form button{
 
 }
 
-/* COMMENTS */
-.comments-template{
-    margin: 10px 0 0 0;
-}
-
-.comments-template ol{
-    margin: 10px;
-    padding: 0 0 0 15px;
-    list-style: none;
-}
-
-.comments-template ol p{
-    font-family: Trebuchet MS, Arial, Hevletica, Sans-serif;
-    font-size: 0.9em;
-}
-
-.comments-template ol li{
-    margin: 10px 0 0 0;
-    line-height: 15px;
-    padding: 0 0 10px;
-}
-
-.comments-template h2, .comments-template h3{
-    font-size: 1.2em;
-}
-
-.commentmetadata{
-    font-size: 0.9em;
-}
-
-.comments-template p.nocomments{
-    padding: 0;
-}
-
-.comments-template textarea{
-    font-family: Trebuchet MS, Arial, Hevletica, Sans-serif;
-    font-size: 0.9em;
-}
-
-.cadre_commentaires {
-    border-bottom: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-}
-
-.inpFil {
-    color: #000000;
-}
-
 @media (max-width: 640px) {
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        width: auto;
-        margin: 0;
-        padding: 0;
-    }
 
     #footer-left {
         width: 100%;
@@ -233,14 +182,6 @@ form button{
     pre,
     samp {
         white-space: pre-wrap; /* passage à la ligne spécifique pour les éléments à châsse fixe */
-    }
-
-    /* Passer à une seule colonne (à appliquer aux éléments multi-colonnes) */
-
-    .element1,
-    .element2 {
-        float: none;
-        width: auto;
     }
 
     /* masquer les éléments superflus */

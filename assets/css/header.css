@@ -6,9 +6,10 @@ header {
 }
 
 header a img {
-    width: 50vh;
-    height: auto;
+     width: 25%;
+     height: auto;
 }
+
 .logo {
     display: flex;
     justify-content: space-around;
@@ -41,6 +42,7 @@ header a img {
     background: inherit;
     padding: 0;
     margin: 0;
+    border-left: 1px solid darkgrey;
 }
 
 .menu-item, .menu-item a, .dropbtn {
@@ -50,10 +52,6 @@ header a img {
     text-decoration: none;
     font-weight: bold;
     color: #00558a;
-}
-
-header .menu-item_dropdown-content a {
-    color: #000000;
 }
 
 .menu-item_dropdown-content {
@@ -138,5 +136,12 @@ header .menu-item_dropdown-content a {
 
     .menu-item{
         width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+    header a img {
+        width: 50%;
+        height: auto;
     }
 }
