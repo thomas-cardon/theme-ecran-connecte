@@ -7,7 +7,6 @@ if(function_exists('downloadFileICS_func')) {
         $years = $model->getCodeYear();
     }
 
-
     $page = get_page_by_title('Emploi du temps');
     $linkEDT = get_permalink($page->ID);
 
@@ -38,15 +37,12 @@ if(function_exists('downloadFileICS_func')) {
     $page = get_page_by_title( 'Inscription');
     $linkInscrip = get_permalink($page->ID);
     ?>
-
-    <?php if(! in_array("television", $current_user->roles)) { ?>
-        <nav class="menu" id="myMenu">
-            <a href="javascript:void(0);" style="font-size:30px;" class="icon" onclick="switchMenu()">&#9776;</a>
+    <nav class="menu" id="myMenu">
+        <ul>
             <?php if (!is_user_logged_in()) { ?>
-                <a class="menu-item" href="<?php echo wp_login_url(); ?>">CONNEXION</a>
-                <a class="menu-item" href="<?php echo $linkInscrip; ?>">S'INSCRIRE</a>
+                <li><a class="menu-item" href="<?php echo wp_login_url(); ?>">Connexion</a></li>
             <?php } elseif (is_user_logged_in() && ! in_array("technician", $current_user->roles)) { ?>
-                <div class="menu-item_dropdown menu-item">
+                <li class="menu-item_dropdown menu-item">
                     <button class="dropbtn">Emploi du temps
                         <i class="fa fa-caret-down"></i>
                     </button>
@@ -57,9 +53,9 @@ if(function_exists('downloadFileICS_func')) {
                             <?php }
                         } ?>
                     </div>
-                </div>
+                </li>
                 <?php if (in_array('secretaire',$current_user->roles) || in_array('administrator',$current_user->roles)) { ?>
-                    <div class="menu-item_dropdown menu-item">
+                    <li class="menu-item_dropdown menu-item">
                         <button class="dropbtn">Utilisateurs
                             <i class="fa fa-caret-down"></i>
                         </button>
@@ -67,9 +63,9 @@ if(function_exists('downloadFileICS_func')) {
                             <a href="<?php echo $linkAddUser; ?>"> Création des comptes</a>
                             <a href="<?php echo $linkManageUser; ?>">Gestion des utilisateurs</a>
                         </div>
-                    </div>
-                <?php }  if (in_array('secretaire',$current_user->roles) || in_array('administrator',$current_user->roles) || in_array('enseignant',$current_user->roles) || in_array('directeuretude',$current_user->roles)) { ?>
-                    <div class="menu-item_dropdown menu-item">
+                    </li>
+                    <?php }  if (in_array('secretaire',$current_user->roles) || in_array('administrator',$current_user->roles) || in_array('enseignant',$current_user->roles) || in_array('directeuretude',$current_user->roles)) { ?>
+                    <li class="menu-item_dropdown menu-item">
                         <button class="dropbtn">Alertes
                             <i class="fa fa-caret-down"></i>
                         </button>
@@ -77,9 +73,9 @@ if(function_exists('downloadFileICS_func')) {
                             <a href="<?php echo $linkAddAlert; ?>">Créer une alerte</a>
                             <a href="<?php echo $linkManageAlert; ?>">Gestion des alertes</a>
                         </div>
-                    </div>
-                    <?php if (in_array('secretaire',$current_user->roles) || in_array('administrator',$current_user->roles) || in_array('directeuretude',$current_user->roles)) { ?>
-                        <div class="menu-item_dropdown menu-item">
+                    </li>
+                        <?php if (in_array('secretaire',$current_user->roles) || in_array('administrator',$current_user->roles) || in_array('directeuretude',$current_user->roles)) { ?>
+                        <li class="menu-item_dropdown menu-item">
                             <button class="dropbtn">Informations
                                 <i class="fa fa-caret-down"></i>
                             </button>
@@ -87,17 +83,15 @@ if(function_exists('downloadFileICS_func')) {
                                 <a href="<?php echo $linkAddInfo; ?>">Créer une information</a>
                                 <a href="<?php echo $linkManageInfo; ?>">Gestion des informations</a>
                             </div>
-                        </div>
-                    <?php } ?>
-                    <?php if (in_array('secretaire',$current_user->roles) || in_array('administrator',$current_user->roles)) { ?>
-                        <a class="menu-item" href="<?php echo $linkCode; ?>"> CODES ADE</a>
-                    <?php }
-                } ?>
-                <a class="menu-item" href="<?php echo $linkAccount; ?>">MON COMPTE</a>
-                <a class="menu-item" href="<?php echo wp_logout_url(home_url()); ?>">DÉCONNEXION</a>
-            <?php } ?>
+                        </li>
+                        <?php } ?>
+                        <?php if (in_array('secretaire',$current_user->roles) || in_array('administrator',$current_user->roles)) { ?>
+                            <li><a class="menu-item" href="<?php echo $linkCode; ?>"> Codes ADE</a></li>
+                        <?php }
+                    } ?>
+                <li><a class="menu-item" href="<?php echo $linkAccount; ?>">Mon compte</a></li>
+                <li><a class="menu-item" href="<?php echo wp_logout_url(home_url()); ?>">Déconnexion</a></li>
+                <?php } ?>
+            </ul>
         </nav>
-    <?php } else {?>
-        <a class="ninja" href="<?php echo wp_logout_url(home_url()); ?>">Déconnexion</a>
-    <?php }
-} ?>
+<?php } ?>

@@ -15,6 +15,7 @@ body {
     font-weight: 400;
     line-height: 1.5;
     color: #0a0a0a;
+    background-color: #F4F4F4;
 }
 
 img {
@@ -47,16 +48,6 @@ a:focus, a:hover {
 }
 
 /* FORM */
-
-.cadre {
-    text-align: center;
-    width: auto;
-    padding: 10px;
-    background-color: #EEEEEE;
-    opacity: 50%;
-}
-
-/*__form__*/
 form {
     display: flex;
     justify-content: space-around;

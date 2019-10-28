@@ -1,19 +1,8 @@
 /* FOOTER */
-
-#footer_tv {
+footer {
     position: fixed;
     left: 0;
     bottom: 0;
-}
-
-#footer_user {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-}
-
-#footer div {
-    display: block;
 }
 
 #footer-left {

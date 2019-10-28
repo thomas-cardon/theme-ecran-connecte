@@ -1,48 +1,87 @@
 /* HEADER */
 header {
+    float: left;
+    width: 100%;
     background-color: #00558b;
     color: #ffffff;
-    margin: 0;
+    border-bottom: 1px solid black;
 }
 
 header a img {
-     width: auto;
-     height: 15vh;
+    float: left;
+    width: auto;
+    height: 10vh;
 }
 
-.logo {
+header a.logo-tv {
+    float: none;
+    width: auto;
+    height: 15vh;
+}
+
+header a.logo-tv img {
     display: flex;
     justify-content: space-around;
 }
 
-.menu {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #F4F4F4;
-    text-align: center;
+.menu_ham {
+    width: 5vw;
+    float: left;
 }
 
-.menu a {
+.icon {
+    margin-top: 1vh;
+    padding: 5px 0 0 15px;
+}
+
+a.icon {
+    width: 2vw;
     float: left;
+    color: #ffffff;
+    font-size:30px;
     display: block;
-    text-align: center;
+    text-decoration: none;
+    text-underline: none;
+}
+
+a.icon:hover {
+    color: #ffffff;
+}
+
+nav.menu {
+    float: left;
+    width: 30%;
+    text-transform: uppercase;
+    padding: 0;
+}
+
+nav.menu ul {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    list-style-type:none;
+    overflow: hidden;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    background-color: #00558a;
+    width: 60%;
+}
+
+nav.menu ul li {
+    text-align: left;
+    display: block;
+}
+
+nav.menu a {
+    text-align: left;
     padding: 14px 16px;
     text-decoration: none;
 }
 
-.menu .icon {
-    display: none;
-}
-
-.menu-item {
-    width: 14.28%;
-    float: left;
-    background: inherit;
-    padding: 0;
-    margin: 0;
-    border-left: 1px solid darkgrey;
+nav.menu a:hover {
+    color: #ffffff;
 }
 
 .menu-item, .menu-item a, .dropbtn {
@@ -51,16 +90,11 @@ header a img {
     font-size: .80rem;
     text-decoration: none;
     font-weight: bold;
-    color: #00558a;
+    color: #ffffff;
 }
 
 .menu-item_dropdown-content {
     background-color: #ffffff;
-}
-
-.menu-item_dropdown {
-    float: left;
-    overflow: hidden;
 }
 
 .menu-item_dropdown .dropbtn {
@@ -86,62 +120,106 @@ header a img {
     text-decoration: none;
     display: block;
     text-align: center;
-}
-
-.topnav a:hover, .drop_down:hover .dropbtn {
-
+    color:#00558a;
 }
 
 .menu-item_dropdown-content a:hover {
-
+    color:#00558a !important;
 }
 
 .menu-item_dropdown:hover .menu-item_dropdown-content {
     display: block;
 }
 
-@media screen and (max-width: 1150px) {
-    .menu a:not(:first-child), .menu-item_dropdown .dropbtn {
+/*@media screen and (max-width: 1190px) {*/
+
+    .menu a:not(:first-child), .menu-item_dropdown .dropbtn, a.menu-item {
         display: none;
     }
-    .menu a.icon {
-        float: left;
+
+    .menu-item, .menu-item a, .dropbtn {
+        display: block;
+        letter-spacing: .1rem;
+        font-size: .80rem;
+        text-decoration: none;
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    .menu-item_dropdown-content {
+        background-color: #ffffff;
+    }
+
+    .menu-item_dropdown .dropbtn {
+        border: none;
+        outline: none;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+
+    .menu-item_dropdown-content {
+        display: none;
+        position: absolute;
+        min-width: 160px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .menu-item_dropdown-content a {
+        float: none;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        color:#00558a !important;
+    }
+
+    .menu-item_dropdown-content a:hover {
+        color:#00558a !important;
+    }
+
+    .menu-item_dropdown:hover .menu-item_dropdown-content {
         display: block;
     }
-}
 
-@media screen and (max-width: 1150px) {
     .menu.responsive {
         position: relative;
     }
+
     .menu.responsive .icon {
         text-align: left;
     }
+
     .menu.responsive a {
         float: none;
         display: block;
         text-align: left;
+        color: white;
     }
+
     .menu.responsive .menu-item_dropdown {
-        float: none;
     }
+
     .menu.responsive .menu-item_dropdown-content {
         position: relative;
     }
+
     .menu.responsive .menu-item_dropdown .dropbtn {
         display: block;
-        width: 100%;
         text-align: left;
     }
-
-    .menu-item{
-        width: 100%;
-    }
-}
+/*}*/
 
 @media (max-width: 800px) {
+
+    .menu_ham {
+        width: 15vw;
+    }
+
     header a img {
-        width: auto;
-        height: 20vh;
+        width: 60vw;
+        height: auto;
     }
 }

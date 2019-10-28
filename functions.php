@@ -71,3 +71,51 @@ function my_login_stylesheet() {
     wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/assets/css/login.css' );
 }
 add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+
+//Met la bonne heure
+global $wpdb;
+date_default_timezone_set('Europe/Paris');
+$wpdb->time_zone = 'Europe/Paris';
+
+//error_reporting(E_ERROR);
+
+/**
+ * Enlève la barre admin de Wordpress
+ */
+add_action('after_setup_theme', 'remove_admin_bar');
+function remove_admin_bar() {
+    if (!current_user_can('administrator') && !is_admin()) {
+        show_admin_bar(false);
+    }
+}
+
+/**
+ * Seul les admins peuvent aller sur wp-admin
+ */
+add_action( 'init', 'wpm_admin_redirection' );
+function wpm_admin_redirection() {
+    //Si on essaye d'accéder à L'administration Sans avoir le rôle administrateur
+    if ( is_admin() && ! current_user_can( 'administrator' ) ) {
+        // On redirige vers la page d'accueil
+        wp_redirect( home_url() );
+        exit;
+    }
+}
+
+/**
+ * Change the url for the image
+ * @return mixed
+ */
+function my_login_logo_url() {
+    return $_SERVER['HTTP_HOST'];
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+/**
+ * Change the title of the image
+ * @return string
+ */
+function my_login_logo_url_title() {
+    return get_bloginfo('name');
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
