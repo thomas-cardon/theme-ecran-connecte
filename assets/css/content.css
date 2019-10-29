@@ -1,12 +1,20 @@
 /* CONTENT */
+
+main {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+
 section {
     border-radius: 2px;
+    padding: 5px;
+
     background-color: white;
 }
 
 h1 {
-    font-size: 1.75rem;
-    line-height: 2rem;
+    font-size: 2vw;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-family: "Titillium Web", sans-serif;
@@ -17,8 +25,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5rem;
-    line-height: 1.5rem;
+    font-size: 1.8vw;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: "Titillium Web", sans-serif;

@@ -10,35 +10,35 @@ header {
 header a img {
     float: left;
     width: auto;
-    height: 10vh;
+    height: 5vw;
 }
 
 header a.logo-tv {
+    display: flex;
+    justify-content: space-around;
     float: none;
     width: auto;
-    height: 15vh;
 }
 
 header a.logo-tv img {
-    display: flex;
-    justify-content: space-around;
+    height: 15vh;
 }
 
 .menu_ham {
-    width: 5vw;
+    min-width: 60px;
+    width: 6vw;
     float: left;
 }
 
 .icon {
-    margin-top: 1vh;
+    margin-top: 1%;
     padding: 5px 0 0 15px;
 }
 
 a.icon {
-    width: 2vw;
     float: left;
     color: #ffffff;
-    font-size:30px;
+    font-size:50px;
     display: block;
     text-decoration: none;
     text-underline: none;
@@ -49,7 +49,6 @@ a.icon:hover {
 }
 
 nav.menu {
-    float: left;
     width: 30%;
     text-transform: uppercase;
     padding: 0;
@@ -71,7 +70,8 @@ nav.menu ul {
 
 nav.menu ul li {
     text-align: left;
-    display: block;
+    display: flex;
+    justify-content: flex-start;
 }
 
 nav.menu a {
@@ -203,7 +203,7 @@ nav.menu a:hover {
     }
 
     .menu.responsive .menu-item_dropdown-content {
-        position: relative;
+        left: 60%;
     }
 
     .menu.responsive .menu-item_dropdown .dropbtn {

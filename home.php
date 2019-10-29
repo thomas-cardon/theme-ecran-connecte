@@ -3,9 +3,8 @@
         <main <?php if(in_array("technicien", $current_user->roles)){  ?> id="content"> <?php } else { ?> id="content-twocolumns">
                 <?php } ?>
             <section>
-                <?php if(class_exists(Schedule::class)) {
-                    $controller = new Schedule();
-                    $controller->displaySchedules();
+                <?php if(defined('TV_PLUG_PATH')) {
+                    displaySchedule();
                 }
                  ?>
             </section>
