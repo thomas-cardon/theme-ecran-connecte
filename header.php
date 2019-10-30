@@ -32,9 +32,7 @@
                 </a>
             </header>
             <?php } else { ?>
-                <div class="menu_ham">
-                    <a href="javascript:void(0);" class="icon" onclick="switchMenu()">&#9776;</a>
-                </div>
+                <a href="javascript:void(0);" class="icon" onclick="switchMenu()">&#9776;</a>
                 <a href="<?php echo esc_url(home_url('/')); ?>" class="logo" rel="home">
                     <img src="<?php header_image(); ?>" alt="Logo du site" />
                 </a>

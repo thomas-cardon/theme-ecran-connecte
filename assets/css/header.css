@@ -1,13 +1,15 @@
 /* HEADER */
 header {
-    float: left;
     width: 100%;
     background-color: #00558b;
     color: #ffffff;
     border-bottom: 1px solid black;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 header a img {
+    margin-left: 4vw;
     float: left;
     width: auto;
     height: 5vw;
@@ -18,27 +20,21 @@ header a.logo-tv {
     justify-content: space-around;
     float: none;
     width: auto;
+    margin-left: 0;
 }
 
 header a.logo-tv img {
     height: 15vh;
 }
 
-.menu_ham {
-    min-width: 60px;
-    width: 6vw;
-    float: left;
-}
-
 .icon {
-    margin-top: 1%;
     padding: 5px 0 0 15px;
 }
 
 a.icon {
     float: left;
     color: #ffffff;
-    font-size:50px;
+    font-size:3vw;
     display: block;
     text-decoration: none;
     text-underline: none;
