@@ -1,49 +1,33 @@
 /* CONTENT */
-#page {
-
+* {
+    font-size: 1rem;
 }
 
-
-#content {
-    margin-left: 5%;
-    margin-right: 5%;
-    color: black;
-    width: 90%;
-}
-
-#content-twocolumns{
+main {
+    margin-top: 20px;
+    margin-left: 20px;
     float: left;
-    text-align: center;
-    color: black;
-    width: 68%;
-    margin-left: 1%;
-    margin-right: 1%;
 }
 
-#content-threecolumns {
-    color: black;
-    width: 38%;
-    float: left;
-    margin-left: 1%;
-    margin-right: 1%;
+section {
+    border-radius: 2px;
+    padding: 5px;
+    background-color: white;
 }
 
 h1 {
-    font-size: 1.75rem;
-    line-height: 2rem;
+    font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-family: "Titillium Web", sans-serif;
     color: #00558a;
-    margin-top: 20px;
     margin-bottom: .5rem;
     font-style: normal;
     font-weight: 400;
 }
 
 h2 {
-    font-size: 1.5rem;
-    line-height: 1.5rem;
+    font-size: 1.8rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: "Titillium Web", sans-serif;
@@ -55,7 +39,8 @@ h2 {
 }
 
 table {
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    overflow-x: auto;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 thead {
@@ -77,10 +62,22 @@ input[type=button], input[type=submit], input[type=reset], button {
     border-radius: 5px;
 }
 
+#content {
+    color: black;
+    width: 80%;
+}
+
+#content-twocolumns{
+    float: left;
+    text-align: center;
+    color: black;
+    width: auto;
+}
+
 @media (max-width: 800px) {
     input[type=button], input[type=submit], input[type=reset], button {
         padding: 8px 8px;
-        font-size: 10px;
+        font-size: 1rem;
     }
 }
 
@@ -91,7 +88,7 @@ input[type=button], input[type=submit], input[type=reset], button {
 
 @media (max-width: 1950px) {
     .tablesize {
-        font-size: 60%;
+        font-size: 0.6rem;
     }
 }
 

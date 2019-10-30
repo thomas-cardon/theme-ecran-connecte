@@ -1,21 +1,18 @@
 /* SIDEBAR */
 #sidebar-left {
-    margin-top: 1%;
     width: 30%;
     float: left;
-    border-right: 1px solid darkgrey;
 }
 
 #sidebar-right {
-    margin-top: 1%;
-    margin-bottom: 1%;
     width: 30%;
-    float: left;
-    border-left: 1px solid darkgrey;
+    float: right;
+    margin-bottom: 13vh;
 }
 
+
 .sidebar ul{
-    list-style-type: upper-alpha;
+    list-style-type:none;
     margin: 0;
     padding-left: 0;
 }
@@ -35,7 +32,6 @@
 @media (max-width: 1000px) {
     /* SIDEBAR */
     #sidebar-left {
-        float: none;
         margin-top: 1%;
         width: 100%;
         border-top: 1px solid darkgrey;
@@ -43,7 +39,6 @@
     }
 
     #sidebar-right {
-        float: none;
         margin-top: 1%;
         width: 100%;
         border-top: 1px solid darkgrey;
@@ -53,12 +48,12 @@
 
 @media (max-height: 1100px) {
     #sidebar-right {
-        height: 75ex;
+
     }
 }
 
 @media (max-height: 800px) {
     #sidebar-right {
-        height: 60ex;
+
     }
 }
