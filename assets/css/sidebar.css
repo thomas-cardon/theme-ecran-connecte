@@ -1,9 +1,8 @@
 /* SIDEBAR */
 #sidebar-left, #sidebar-right {
     margin-top: 10px;
-    height: 70vh;
     width: 30%;
-    margin-bottom: 26vh;
+    margin-bottom: 13vh;
 }
 
 #sidebar-left {
