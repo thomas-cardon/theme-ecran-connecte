@@ -30,7 +30,7 @@
     //Update site title color in real time...
     wp.customize( 'header_background_color', function( value ) {
         value.bind( function( newval ) {
-            $('#header').css('background-color', newval );
+            $('header').css('background-color', newval );
         } );
     } );
 
