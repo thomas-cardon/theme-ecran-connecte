@@ -181,12 +181,12 @@ class MyTheme_Customize {
         ?>
         <!--Customizer CSS-->
         <style type="text/css">
-            <?php self::generate_css('#header', 'background-color', 'header_background_color'); ?>
+            <?php self::generate_css('header', 'background-color', 'header_background_color'); ?>
             <?php self::generate_css('.menu-item', 'color', 'header_textcolor'); ?>
             <?php self::generate_css('.menu-item a', 'color', 'header_textcolor'); ?>
             <?php self::generate_css('.dropbtn', 'color', 'header_textcolor'); ?>
             <?php self::generate_css('.drop_down-content', 'background-color', 'dropdown_background_color'); ?>
-            <?php self::generate_css('#header .drop_down-content a', 'color', 'dropdown_text_color'); ?>
+            <?php self::generate_css('header .drop_down-content a', 'color', 'dropdown_text_color'); ?>
             <?php self::generate_css('body', 'background-color', 'background_color', '#'); ?>
             <?php self::generate_css('.alerts', 'background-color', 'alert_background_color'); ?>
             <?php self::generate_css('.alerts', 'color', 'alert_text_color'); ?>

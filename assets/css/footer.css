@@ -37,12 +37,28 @@ footer {
     width: 70%;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
+
+    footer {
+        position: relative;
+        left: auto;
+        bottom: auto;
+    }
+
     #footer-left {
         width: 100%;
+        float: none;
+        position: relative;
     }
 
     #footer-right {
         display: none;
+    }
+
+    .footer_wp {
+        float: none;
+        position: unset;
+        left: auto;
+        bottom: auto;
     }
 }

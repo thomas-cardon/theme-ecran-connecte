@@ -1,10 +1,14 @@
 /* CONTENT */
-* {
+body {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #0a0a0a;
+    background-color: #F4F4F4;
     font-size: 1rem;
 }
 
 main {
-    margin-top: 20px;
     margin-left: 20px;
     float: left;
 }
@@ -38,6 +42,63 @@ h2 {
     font-weight: 300;
 }
 
+#content, #content-twocolumns {
+    color: black;
+    margin-top: 10px;
+}
+
+#content {
+    float: none;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#content-twocolumns{
+    float: left;
+    text-align: center;
+    max-width: 70%;
+}
+
+/* LINK */
+a {
+    line-height: inherit;
+    color: #00558a;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:focus, a:hover {
+    color: #00558a;
+}
+
+/* FORM */
+form {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+form input{
+    margin : 3px;
+}
+form button{
+    margin : 3px;
+}
+
+th {font-size : 120%;}
+
+.tdcentered {text-align: center;}
+
+
+td img {
+    max-width: 75px;
+    max-height: 75px;
+}
+
 table {
     overflow-x: auto;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -62,50 +123,13 @@ input[type=button], input[type=submit], input[type=reset], button {
     border-radius: 5px;
 }
 
-#content {
-    color: black;
-    width: 80%;
-}
-
-#content-twocolumns{
-    float: left;
-    text-align: center;
-    color: black;
-    width: auto;
-}
-
-@media (max-width: 800px) {
-    input[type=button], input[type=submit], input[type=reset], button {
-        padding: 8px 8px;
-        font-size: 1rem;
-    }
+.ninja {
+    opacity: 0;
 }
 
 .tablesize {
     width: 100% !important;
     font-size: smaller;
-}
-
-@media (max-width: 1950px) {
-    .tablesize {
-        font-size: 0.6rem;
-    }
-}
-
-@media (max-width: 1000px) {
-
-    #content {
-        float: none;
-        margin-right: 5%;
-        margin-left: 5%;
-    }
-
-    #content-twocolumns {
-        float: none;
-        width: 90%;
-        margin-right: 5%;
-        margin-left: 5%;
-    }
 }
 
 .firstSelect {
@@ -128,4 +152,103 @@ input[type=button], input[type=submit], input[type=reset], button {
     border: 1px solid #ced4da;
     border-radius: .25rem;
     margin: 0;
+}
+
+@media (max-width: 1950px) {
+    .tablesize {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    #content {
+        margin-right: 5%;
+        margin-left: 5%;
+        float: none;
+    }
+
+    #content-twocolumns {
+        width: 90%;
+        float: none;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+    /* SIDEBAR */
+    #sidebar-left {
+        float: none;
+        margin-top: 1%;
+        width: 100%;
+        border-top: 1px solid darkgrey;
+    }
+
+    #sidebar-right {
+        float: none;
+        margin-top: 1%;
+        width: 100%;
+        border-top: 1px solid darkgrey;
+    }
+
+    #footer-left {
+        float: none;
+        width: 100%;
+    }
+
+    #footer-right {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+
+    h1 {
+        font-size: 1.25rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    #content-twocolumns {
+        max-width: 100%;
+        font-size: 0.7rem;
+    }
+
+
+    input[type=button], input[type=submit], input[type=reset], button {
+        padding: 8px 8px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+
+    #footer-left {
+        width: 100%;
+        float: none;
+    }
+
+    #content {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    #content-twocolumns {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    /* masquer les éléments superflus */
+    .hide_mobile {
+        display: none !important;
+    }
+}
+
+@media (max-device-width:768px) and (orientation: landscape) {
+    html {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    }
 }
