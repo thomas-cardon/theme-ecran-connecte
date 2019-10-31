@@ -37,11 +37,11 @@ header a.logo-tv {
     justify-content: space-around;
     float: none;
     width: auto;
-    margin-left: 0;
 }
 
 header a.logo-tv img {
     height: 12vh;
+    margin-left: 0;
 }
 
 nav.menu {

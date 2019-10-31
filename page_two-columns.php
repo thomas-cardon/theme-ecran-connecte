@@ -1,6 +1,12 @@
 <?php /* Template Name: Colonne droite */ ?>
-<?php get_header(); ?>
-        <main id="content-twocolumns">
+<?php get_header();
+$id = "content-twocolumns";
+if(in_array("technicien", $current_user->roles)) {
+$id = "content";
+} else if(in_array("television", $current_user->roles)){
+$id = "content_tv";
+}
+echo '<main id="'.$id.'">'; ?>
             <section>
                 <?php if(have_posts()) :
                     while(have_posts()) : the_post(); ?>
