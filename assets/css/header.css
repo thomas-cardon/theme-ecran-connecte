@@ -28,7 +28,7 @@ a.icon:hover {
 header a img {
     margin-left: 4vw;
     float: left;
-    width: 20vw;
+    width: auto;
     height: auto;
 }
 
