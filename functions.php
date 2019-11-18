@@ -8,69 +8,83 @@ add_filter('auto_update_theme', '__return_true');
 
 /**
  * Used by hook: 'customize_preview_init'
- *
  * @see add_action('customize_preview_init',$func)
  */
 function mytheme_customizer_live_preview()
 {
     wp_enqueue_script(
-        'mytheme-themecustomizer',			//Give the script an ID
-        get_template_directory_uri().'/assets/js/theme-customizer.js',//Point to file
-        array( 'jquery','customize-preview' ),	//Define dependencies
-        '',						//Define a version (optional)
-        true						//Put script in footer?
+        'mytheme-themecustomizer',            //Give the script an ID
+        get_template_directory_uri() . '/assets/js/theme-customizer.js',//Point to file
+        array('jquery', 'customize-preview'),    //Define dependencies
+        '',                        //Define a version (optional)
+        true                        //Put script in footer?
     );
 }
-add_action( 'customize_preview_init', 'mytheme_customizer_live_preview' );
 
-function add_theme_scripts() {
+add_action('customize_preview_init', 'mytheme_customizer_live_preview');
+
+/**
+ * Charge les fichiers CSS et Javascript
+ */
+function add_theme_scripts()
+{
     wp_enqueue_style('bootstrap-style', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', false, '', 'all');
-    wp_enqueue_style('main-style', get_template_directory_uri().'/style.css', false, '1.0', 'all');
-    wp_enqueue_style('header-style', get_template_directory_uri().'/assets/css/header.css', false, '1.0', 'all');
-    wp_enqueue_style('content-style', get_template_directory_uri().'/assets/css/content.css', false, '1.0', 'all');
-    wp_enqueue_style('sidebar-style', get_template_directory_uri().'/assets/css/sidebar.css', false, '1.0', 'all');
-    wp_enqueue_style('footer-style', get_template_directory_uri().'/assets/css/footer.css', false, '1.0', 'all');
+    wp_enqueue_style('main-style', get_template_directory_uri() . '/style.css', false, '1.0', 'all');
+    wp_enqueue_style('header-style', get_template_directory_uri() . '/assets/css/header.css', false, '1.0', 'all');
+    wp_enqueue_style('content-style', get_template_directory_uri() . '/assets/css/content.css', false, '1.0', 'all');
+    wp_enqueue_style('sidebar-style', get_template_directory_uri() . '/assets/css/sidebar.css', false, '1.0', 'all');
+    wp_enqueue_style('footer-style', get_template_directory_uri() . '/assets/css/footer.css', false, '1.0', 'all');
     //wp_enqueue_script( 'theme-jquery', get_template_directory_uri() . '/assets/js/jquery-3.3.1.min.js', array (), '', false);
     //wp_enqueue_script( 'theme-jqueryUI', get_template_directory_uri() . '/assets/js/jquery-ui.min.js', array ( 'jquery' ), '', false);
-    wp_enqueue_script( 'theme-menu', get_template_directory_uri() . '/assets/js/menu.js', array ( 'jquery' ), '', false);
-    wp_enqueue_script( 'theme-popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array(), '', true);
-    wp_enqueue_script( 'theme-bootstrapjs', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array(), '', true);
+    wp_enqueue_script('theme-menu', get_template_directory_uri() . '/assets/js/menu.js', array('jquery'), '', false);
+    wp_enqueue_script('theme-popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array(), '', true);
+    wp_enqueue_script('theme-bootstrapjs', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array(), '', true);
 }
-add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
-function admin_css() {
+add_action('wp_enqueue_scripts', 'add_theme_scripts');
+
+/**
+ * CSS pour la partie admin
+ */
+function admin_css()
+{
 
     $admin_handle = 'admin_css';
     $admin_stylesheet = get_template_directory_uri() . '/assets/css/admin.css';
 
-    wp_enqueue_style( $admin_handle, $admin_stylesheet );
+    wp_enqueue_style($admin_handle, $admin_stylesheet);
 }
-add_action('admin_print_styles', 'admin_css', 11 );
+
+add_action('admin_print_styles', 'admin_css', 11);
 
 /**
- * Change the image of the logo
+ * Change l'image du logo
  */
-function my_login_logo() { ?>
+function my_login_logo()
+{ ?>
     <style type="text/css">
         #login h1 a, .login h1 a {
             background-image: url(<?php echo get_stylesheet_directory_uri()."/assets/images/logo.png" ?>);
-            height:65px;
-            width:320px;
+            height: 65px;
+            width: 320px;
             background-size: 120px 120px;
             background-repeat: no-repeat;
             padding-bottom: 60px;
         }
     </style>
 <?php }
-add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+add_action('login_enqueue_scripts', 'my_login_logo');
 
 /**
  * Ajoute une nouvelle feuille de style pour la page de connexion
  */
-function my_login_stylesheet() {
-    wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/assets/css/login.css' );
+function my_login_stylesheet()
+{
+    wp_enqueue_style('custom-login', get_stylesheet_directory_uri() . '/assets/css/login.css');
 }
-add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+
+add_action('login_enqueue_scripts', 'my_login_stylesheet');
 
 //Met la bonne heure
 global $wpdb;
@@ -83,7 +97,8 @@ $wpdb->time_zone = 'Europe/Paris';
  * Enlève la barre admin de Wordpress
  */
 add_action('after_setup_theme', 'remove_admin_bar');
-function remove_admin_bar() {
+function remove_admin_bar()
+{
     if (!current_user_can('administrator') && !is_admin()) {
         show_admin_bar(false);
     }
@@ -92,30 +107,35 @@ function remove_admin_bar() {
 /**
  * Seul les admins peuvent aller sur wp-admin
  */
-add_action( 'init', 'wpm_admin_redirection' );
-function wpm_admin_redirection() {
+add_action('init', 'wpm_admin_redirection');
+function wpm_admin_redirection()
+{
     //Si on essaye d'accéder à L'administration Sans avoir le rôle administrateur
-    if ( is_admin() && ! current_user_can( 'administrator' ) ) {
+    if (is_admin() && !current_user_can('administrator')) {
         // On redirige vers la page d'accueil
-        wp_redirect( home_url() );
+        wp_redirect(home_url());
         exit;
     }
 }
 
 /**
- * Change the url for the image
+ * Change l'url du logo
  * @return mixed
  */
-function my_login_logo_url() {
+function my_login_logo_url()
+{
     return $_SERVER['HTTP_HOST'];
 }
-add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+add_filter('login_headerurl', 'my_login_logo_url');
 
 /**
- * Change the title of the image
+ * Change le titre de du logo
  * @return string
  */
-function my_login_logo_url_title() {
+function my_login_logo_url_title()
+{
     return get_bloginfo('name');
 }
-add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+add_filter('login_headertitle', 'my_login_logo_url_title');

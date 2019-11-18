@@ -21,7 +21,8 @@ $oddcomment = 'alt';
 
     <div class="cadre_commentaires">
         <?php if ($comments) : ?>
-            <h3 id="comments"><?php comments_number('Pas de commentaire', 'Un commentaire', '% commentaires' );?> pour &#8220;<?php the_title(); ?>&#8221;</h3>
+            <h3 id="comments"><?php comments_number('Pas de commentaire', 'Un commentaire', '% commentaires'); ?> pour
+                &#8220;<?php the_title(); ?>&#8221;</h3>
 
             <ol class="commentlist">
                 <?php foreach ($comments as $comment) : ?>
@@ -29,7 +30,9 @@ $oddcomment = 'alt';
                     <li class="<?php echo $oddcomment; ?>" id="comment-<?php comment_ID() ?>">
 
                         <div class="commentmetadata">
-                            <strong><?php comment_author_link() ?></strong>, <?php _e('le'); ?> <a href="#comment-<?php comment_ID() ?>" title=""><?php comment_date('j F, Y') ?> <?php _e('&agrave;');?> <?php comment_time() ?></a> <?php _e('Said&#58;'); ?> <?php edit_comment_link('Edit Comment','',''); ?>
+                            <strong><?php comment_author_link() ?></strong>, <?php _e('le'); ?> <a
+                                    href="#comment-<?php comment_ID() ?>"
+                                    title=""><?php comment_date('j F, Y') ?><?php _e('&agrave;'); ?><?php comment_time() ?></a> <?php _e('Said&#58;'); ?> <?php edit_comment_link('Edit Comment', '', ''); ?>
                             <?php if ($comment->comment_approved == '0') : ?>
                                 <em><?php _e('Votre commentaire est en cours de mod&eacute;ration'); ?></em>
                             <?php endif; ?>
@@ -63,25 +66,34 @@ $oddcomment = 'alt';
 
     <h3 id="respond">Laissez un commentaire</h3>
 
-    <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-        <p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php the_permalink(); ?>">connect&eacute;</a> pour laisser un commentaire.</p>
+    <?php if (get_option('comment_registration') && !$user_ID) : ?>
+        <p>You must be <a
+                    href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php the_permalink(); ?>">connect&eacute;</a>
+            pour laisser un commentaire.</p>
 
     <?php else : ?>
 
         <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
-            <?php if ( $user_ID ) : ?>
+            <?php if ($user_ID) : ?>
 
-                <p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="D&eacute;connect&eacute; de ce compte">D&eacute;connection &raquo;</a></p>
+                <p>Logged in as <a
+                            href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>.
+                    <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout"
+                       title="D&eacute;connect&eacute; de ce compte">D&eacute;connection &raquo;</a></p>
 
             <?php else : ?>
 
-                <p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="40" tabindex="1" />
+                <p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="40"
+                          tabindex="1"/>
                     <label for="author"><small>Nom <?php if ($req) echo "(requis)"; ?></small></label></p>
 
-                <p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="40" tabindex="2" />
-                    <label for="email"><small>email (ne sera pas publi&eacute;) <?php if ($req) echo "(requis)"; ?></small></label></p>
+                <p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="40"
+                          tabindex="2"/>
+                    <label for="email"><small>email (ne sera pas
+                            publi&eacute;) <?php if ($req) echo "(requis)"; ?></small></label></p>
 
-                <p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="40" tabindex="3" />
+                <p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="40"
+                          tabindex="3"/>
                     <label for="url"><small>Site Web</small></label></p>
 
             <?php endif; ?>
@@ -90,8 +102,8 @@ $oddcomment = 'alt';
 
             <p><textarea name="comment" id="comment" cols="60" rows="10" tabindex="4"></textarea></p>
 
-            <p><input name="submit" type="submit" id="submit" tabindex="5" value="Envoyer" />
-                <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
+            <p><input name="submit" type="submit" id="submit" tabindex="5" value="Envoyer"/>
+                <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>"/>
             </p>
 
             <?php do_action('comment_form', $post->ID); ?>

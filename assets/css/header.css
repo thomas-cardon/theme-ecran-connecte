@@ -15,7 +15,7 @@ header {
 a.icon {
     float: left;
     color: #ffffff !important;
-    font-size:3vw;
+    font-size: 3vw;
     display: block;
     text-decoration: none;
     text-underline: none;
@@ -55,7 +55,7 @@ nav.menu ul {
     display: flex;
     flex-direction: column;
     justify-content: end;
-    list-style-type:none;
+    list-style-type: none;
     overflow: hidden;
     text-align: left;
     margin: 0;
@@ -106,7 +106,7 @@ nav.menu a:hover {
     display: none;
     position: absolute;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -116,11 +116,11 @@ nav.menu a:hover {
     text-decoration: none;
     display: block;
     text-align: center;
-    color:#00558a;
+    color: #00558a;
 }
 
 .menu-item_dropdown-content a:hover {
-    color:#00558a !important;
+    color: #00558a !important;
 }
 
 .menu-item_dropdown:hover .menu-item_dropdown-content {
@@ -157,7 +157,7 @@ nav.menu a:hover {
     display: none;
     position: absolute;
     min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -167,11 +167,11 @@ nav.menu a:hover {
     text-decoration: none;
     display: block;
     text-align: center;
-    color:#00558a !important;
+    color: #00558a !important;
 }
 
 .menu-item_dropdown-content a:hover {
-    color:#00558a !important;
+    color: #00558a !important;
 }
 
 .menu-item_dropdown:hover .menu-item_dropdown-content {
@@ -208,7 +208,7 @@ nav.menu a:hover {
 
 @media (max-width: 1200px) {
     nav.menu ul {
-      float: none;
+        float: none;
     }
 }
 

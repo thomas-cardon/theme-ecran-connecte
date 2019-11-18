@@ -4,61 +4,61 @@
  * here. Your javascript should grab settings from customizer controls, and
  * then make any necessary changes to the page using jQuery.
  */
-( function( $ ) {
+(function ($) {
 
     // Update the site title in real time...
-    wp.customize( 'blogname', function( value ) {
-        value.bind( function( newval ) {
-            $( '#site-title a' ).html( newval );
-        } );
-    } );
+    wp.customize('blogname', function (value) {
+        value.bind(function (newval) {
+            $('#site-title a').html(newval);
+        });
+    });
 
     //Update the site description in real time...
-    wp.customize( 'blogdescription', function( value ) {
-        value.bind( function( newval ) {
-            $( '.site-description' ).html( newval );
-        } );
-    } );
+    wp.customize('blogdescription', function (value) {
+        value.bind(function (newval) {
+            $('.site-description').html(newval);
+        });
+    });
 
     //Update site title color in real time...
-    wp.customize( 'header_textcolor', function( value ) {
-        value.bind( function( newval ) {
-            $('#site-title a').css('color', newval );
-        } );
-    } );
+    wp.customize('header_textcolor', function (value) {
+        value.bind(function (newval) {
+            $('#site-title a').css('color', newval);
+        });
+    });
 
     //Update site title color in real time...
-    wp.customize( 'header_background_color', function( value ) {
-        value.bind( function( newval ) {
-            $('header').css('background-color', newval );
-        } );
-    } );
+    wp.customize('header_background_color', function (value) {
+        value.bind(function (newval) {
+            $('header').css('background-color', newval);
+        });
+    });
 
     //Update site title color in real time...
-    wp.customize( 'footer_background_color', function( value ) {
-        value.bind( function( newval ) {
-            $('#footer').css('background-color', newval );
-        } );
-    } );
+    wp.customize('footer_background_color', function (value) {
+        value.bind(function (newval) {
+            $('#footer').css('background-color', newval);
+        });
+    });
 
     //Update site background color...
-    wp.customize( 'background_color', function( value ) {
-        value.bind( function( newval ) {
-            $('body').css('background-color', newval );
-        } );
-    } );
+    wp.customize('background_color', function (value) {
+        value.bind(function (newval) {
+            $('body').css('background-color', newval);
+        });
+    });
 
     //Update site link color in real time...
-    wp.customize( 'link_textcolor', function( value ) {
-        value.bind( function( newval ) {
-            $('a').css('color', newval );
-        } );
-    } );
+    wp.customize('link_textcolor', function (value) {
+        value.bind(function (newval) {
+            $('a').css('color', newval);
+        });
+    });
 
-    wp.customize( 'link_textcolor', function( value ) {
-        value.bind( function( newval ) {
-            $('a').css('color', newval );
-        } );
-    } );
+    wp.customize('link_textcolor', function (value) {
+        value.bind(function (newval) {
+            $('a').css('color', newval);
+        });
+    });
 
-} )( jQuery );
+})(jQuery);

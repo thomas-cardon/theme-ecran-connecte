@@ -6,12 +6,12 @@ footer {
 }
 
 #footer-left {
-     bottom: 0;
-     left: 0;
-     position: fixed;
-     float: left;
-     width: 70%;
- }
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    float: left;
+    width: 70%;
+}
 
 #footer-right {
     bottom: 0;

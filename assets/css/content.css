@@ -59,7 +59,7 @@ h2 {
     margin-right: 20%;
 }
 
-#content-twocolumns{
+#content-twocolumns {
     float: left;
     max-width: 70%;
 }
@@ -86,16 +86,21 @@ form {
 }
 
 
-form input{
-    margin : 3px;
-}
-form button{
-    margin : 3px;
+form input {
+    margin: 3px;
 }
 
-th {font-size : 120%;}
+form button {
+    margin: 3px;
+}
 
-.tdcentered {text-align: center;}
+th {
+    font-size: 120%;
+}
+
+.tdcentered {
+    text-align: center;
+}
 
 
 td img {
@@ -105,7 +110,7 @@ td img {
 
 table {
     overflow-x: auto;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 thead {
@@ -178,6 +183,7 @@ input[type=button], input[type=submit], input[type=reset], button {
         margin-right: 5%;
         margin-left: 5%;
     }
+
     /* SIDEBAR */
     #sidebar-left {
         float: none;
@@ -250,7 +256,7 @@ input[type=button], input[type=submit], input[type=reset], button {
     }
 }
 
-@media (max-device-width:768px) and (orientation: landscape) {
+@media (max-device-width: 768px) and (orientation: landscape) {
     html {
         -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
