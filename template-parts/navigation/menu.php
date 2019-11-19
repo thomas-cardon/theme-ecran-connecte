@@ -7,6 +7,9 @@ if (function_exists('downloadFileICS_func')) {
         $years = $model->getCodeYear();
     }
 
+    $page = get_page_by_title('Admin');
+    $linkAdmin = get_permalink($page->ID);
+
     $page = get_page_by_title('Emploi du temps');
     $linkEDT = get_permalink($page->ID);
 
@@ -88,6 +91,9 @@ if (function_exists('downloadFileICS_func')) {
                     <?php } ?>
                     <?php if (in_array('secretaire', $current_user->roles) || in_array('administrator', $current_user->roles)) { ?>
                         <li><a class="menu-item" href="<?php echo $linkCode; ?>"> Codes ADE</a></li>
+                    <?php }
+                    if (in_array('administrator', $current_user->roles)) { ?>
+                        <li><a class="menu-item" href="<?php echo $linkAdmin; ?>"> Gestion Admin</a></li>
                     <?php }
                 } ?>
                 <li><a class="menu-item" href="<?php echo $linkAccount; ?>">Mon compte</a></li>

@@ -43,6 +43,7 @@ footer {
         position: relative;
         left: auto;
         bottom: auto;
+        float: left;
     }
 
     #footer-left {
