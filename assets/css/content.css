@@ -15,8 +15,9 @@ body {
 }
 
 main {
-    float: left;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
 }
 
 section {
@@ -53,12 +54,7 @@ h2 {
     margin-top: 10px;
 }
 
-#content-right, #content-left, #content-tv {
-    float: left;
-}
-
 #content-none {
-    float: none;
     width: 60%;
     margin-left: auto;
     margin-right: auto;
