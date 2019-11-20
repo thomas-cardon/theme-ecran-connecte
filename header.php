@@ -39,3 +39,4 @@
         <?php include_once 'template-parts/navigation/menu.php'; ?>
     <?php }
 } ?>
+<div class="flex-row">

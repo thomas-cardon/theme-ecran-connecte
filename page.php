@@ -22,7 +22,13 @@ if (in_array("technicien", $current_user->roles)) {
     $id = "-tv";
 }
 echo '<main id="content-' . $id . '">
-    <section>'; ?>
+    <section>';
+
+//$content = file_get_contents("https://www.nuitdelinfo.com/inscription/sites/55");
+//$res = explode ('Partcipants', $content);
+//echo $res[0];
+
+?>
 <?php if (have_posts()) : ?>
     <?php while (have_posts()) : the_post(); ?>
         <article class="post" id="post-<?php the_ID(); ?>">

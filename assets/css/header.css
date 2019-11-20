@@ -179,7 +179,7 @@ nav.menu a:hover {
 }
 
 .menu.responsive {
-    position: relative;
+    position: absolute;
 }
 
 .menu.responsive .icon {
