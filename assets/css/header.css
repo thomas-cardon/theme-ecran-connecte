@@ -14,7 +14,7 @@ header {
 
 a.icon {
     float: left;
-    color: #ffffff !important;
+    color: #ffffff;
     font-size: 8vh;
     display: block;
     text-decoration: none;
@@ -97,7 +97,7 @@ nav.menu a:hover {
     border: none;
     outline: none;
     padding: 14px 16px;
-    background-color: inherit;
+    background-color: inherit !important;
     font-family: inherit;
     margin: 0;
 }

@@ -37,7 +37,7 @@
     //Update site title color in real time...
     wp.customize('footer_background_color', function (value) {
         value.bind(function (newval) {
-            $('#footer').css('background-color', newval);
+            $('footer').css('background-color', newval);
         });
     });
 
@@ -58,6 +58,18 @@
     wp.customize('link_textcolor', function (value) {
         value.bind(function (newval) {
             $('a').css('color', newval);
+        });
+    });
+
+    wp.customize('alert_text_color', function (value) {
+        value.bind(function (newval) {
+            $('.alerts').css('color', newval);
+        });
+    });
+
+    wp.customize('alert_background_color', function (value) {
+        value.bind(function (newval) {
+            $('.alerts').css('background-color', newval);
         });
     });
 

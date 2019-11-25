@@ -4,21 +4,7 @@ $current_user = wp_get_current_user(); ?>
 
 $id = "none";
 
-if(is_front_page()) {
-    $model = new AdminModel();
-    $results = $model->getModif('column');
-    $col = $results[0]->content;
-    if ($col == 'left' || $col == 'two') {
-        if (!wp_is_mobile()) {
-            get_sidebar('left');
-        }
-    }
-    $id = $col;
-}
-
-if (in_array("technicien", $current_user->roles)) {
-    $id = "none";
-} else if (in_array("technicien", $current_user->roles)) {
+if (in_array("television", $current_user->roles)) {
     $id = "-tv";
 }
 echo '<main id="content-' . $id . '">
@@ -45,15 +31,7 @@ if ($col == 'left' || $col == 'two') {
         get_sidebar('left');
     }
 }
-
-if(is_front_page()) {
-    if ($col == 'right' || $col == 'two') {
-        get_sidebar();
-    }
-    include_once 'template-parts/footer/footer_front.php';
-} else {
-    get_footer();
-} ?>
+get_footer(); ?>
 
 </body>
 </html>

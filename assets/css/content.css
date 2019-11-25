@@ -9,7 +9,7 @@ body {
     margin: 0;
 }
 
-.flex-row {
+.flex-content {
     display: flex;
     flex-direction: row;
 }
@@ -50,7 +50,6 @@ h2 {
 }
 
 #content-none, #content-two, #content-left, #content-right, #content-tv {
-    color: black;
     margin-top: 10px;
 }
 
@@ -112,6 +111,10 @@ thead {
     background-color: #00558a;
 }
 
+th {
+    color: #f8f9fa;
+}
+
 input[type=button], input[type=submit], input[type=reset], button {
     display: inline;
     width: auto;
@@ -164,6 +167,10 @@ input[type=button], input[type=submit], input[type=reset], button {
 }
 
 @media (max-width: 1200px) {
+
+    .flex-content {
+        flex-direction: column;
+    }
 
     #content-none, #content-two, #content-right, #content-left {
         float: none;

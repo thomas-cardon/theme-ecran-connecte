@@ -4,7 +4,9 @@
 <?php if (is_user_logged_in() && !in_array("technicien", $current_user->roles)) { ?>
     <div id="footer-left">
         <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer gauche')) :
-            the_widget('WidgetAlert');
+	        if(get_theme_mod('ecran_connecte_footer_alert', 'show') == 'show') {
+		        the_widget('WidgetAlert');
+	        }
         endif; ?>
     </div>
     <div id="footer-right">

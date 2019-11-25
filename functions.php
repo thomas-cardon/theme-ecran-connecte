@@ -1,6 +1,9 @@
 <?php
 
-include_once 'inc/customizer/back-office.php';
+include_once 'inc/customizer/custom_colors.php';
+include_once 'inc/customizer/custom_sidebar.php';
+include_once 'inc/customizer/custom_schedule.php';
+include_once 'inc/customizer/custom_footer.php';
 
 add_filter('auto_update_plugin', '__return_true');
 add_filter('auto_update_theme', '__return_true');
@@ -37,6 +40,7 @@ function add_theme_scripts()
     //wp_enqueue_script( 'theme-jquery', get_template_directory_uri() . '/assets/js/jquery-3.3.1.min.js', array (), '', false);
     //wp_enqueue_script( 'theme-jqueryUI', get_template_directory_uri() . '/assets/js/jquery-ui.min.js', array ( 'jquery' ), '', false);
     wp_enqueue_script('theme-menu', get_template_directory_uri() . '/assets/js/menu.js', array('jquery'), '', false);
+    wp_enqueue_script('theme-custom', get_template_directory_uri() . '/assets/js/customizer.js', array('jquery'), '', false);
     wp_enqueue_script('theme-popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array(), '', true);
     wp_enqueue_script('theme-bootstrapjs', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array(), '', true);
 }
@@ -138,3 +142,69 @@ function my_login_logo_url_title()
     return get_bloginfo('name');
 }
 add_filter('login_headertitle', 'my_login_logo_url_title');
+
+$args = array(
+    'width' => 345,
+    'height' => 100,
+    'default-image' => get_template_directory_uri() . 'assets/images/header.png',
+    'uploads' => true,
+);
+add_theme_support('custom-header', $args);
+
+$args = array(
+    'default-color' => '#ffffff',
+    'default-image' => '%1$s/images/background.jpg',
+);
+add_theme_support('custom-background', $args);
+
+$args = array(
+    'default-color' => '#ffffff',
+    'default-image' => '%1$s/images/background.jpg',
+);
+add_theme_support('custom-header-background', $args);
+
+// Les différentes sidebars
+if (function_exists('register_sidebar')) {
+    register_sidebar(array(
+        'name' => 'Header',
+        'before_widget' => '<li>',
+        'after_widget' => '</li>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ));
+    register_sidebar(array(
+        'name' => 'Footer',
+        'before_widget' => '<li>',
+        'after_widget' => '</li>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ));
+    register_sidebar(array(
+        'name' => 'Footer gauche',
+        'before_widget' => '<li>',
+        'after_widget' => '</li>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ));
+    register_sidebar(array(
+        'name' => 'Footer droite',
+        'before_widget' => '<li>',
+        'after_widget' => '</li>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ));
+    register_sidebar(array(
+        'name' => 'Colonne Gauche',
+        'before_widget' => '<li>',
+        'after_widget' => '</li>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ));
+    register_sidebar(array(
+        'name' => 'Colonne Droite',
+        'before_widget' => '<li>',
+        'after_widget' => '</li>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ));
+}

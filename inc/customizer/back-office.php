@@ -22,11 +22,20 @@ class MyTheme_Customize
      */
     public static function register($wp_customize)
     {
+        $wp_customize->add_section( 'custom_ecran_connecte', array(
+            'title' => __( 'Ecran Connecte' ),
+            'description' => __( 'Modifier les couleurs des ecrans' ),
+            'panel' => '', // Not typically needed.
+                'priority' => 30,
+            'capability' => 'edit_theme_options',
+            'theme_supports' => '', // Rarely needed.
+        ) );
+
         //1. Define a new section (if desired) to the Theme Customizer
-        $wp_customize->add_section('mytheme_options',
+        $wp_customize->add_section('ecranconnecte_options',
             array(
-                'title' => __('MyTheme Options', 'mytheme'), //Visible title of section
-                'priority' => 35, //Determines what order this appears in
+                'title' => __('MyTheme Options', 'Ecran connecte'), //Visible title of section
+                'priority' => 1, //Determines what order this appears in
                 'capability' => 'edit_theme_options', //Capability needed to tweak
                 'description' => __('Allows you to customize some example settings for MyTheme.', 'mytheme'), //Descriptive tooltip
             )
@@ -50,7 +59,7 @@ class MyTheme_Customize
                 'label' => __('Couleur des liens', 'mytheme'), //Admin-visible name of the control
                 'settings' => 'link_textcolor', //Which setting to load and manipulate (serialized is okay)
                 'priority' => 10, //Determines the order this control appears in for the specified section
-                'section' => 'colors', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
+                'section' => 'Ecran connecte', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
             )
         ));
 
@@ -189,8 +198,8 @@ class MyTheme_Customize
             <?php self::generate_css('.menu-item', 'color', 'header_textcolor'); ?>
             <?php self::generate_css('.menu-item a', 'color', 'header_textcolor'); ?>
             <?php self::generate_css('.dropbtn', 'color', 'header_textcolor'); ?>
-            <?php self::generate_css('.drop_down-content', 'background-color', 'dropdown_background_color'); ?>
-            <?php self::generate_css('header .drop_down-content a', 'color', 'dropdown_text_color'); ?>
+            <?php self::generate_css('.menu-item_dropdown .menu-item', 'background-color', 'dropdown_background_color'); ?>
+            <?php self::generate_css('.menu-item_dropdown .menu-item a', 'color', 'dropdown_text_color'); ?>
             <?php self::generate_css('body', 'background-color', 'background_color', '#'); ?>
             <?php self::generate_css('.alerts', 'background-color', 'alert_background_color'); ?>
             <?php self::generate_css('.alerts', 'color', 'alert_text_color'); ?>
@@ -286,43 +295,43 @@ add_theme_support('custom-header-background', $args);
 if (function_exists('register_sidebar')) {
     register_sidebar(array(
         'name' => 'Header',
-        'before_widget' => '<div id="header">',
-        'after_widget' => '</div>',
+        'before_widget' => '<li>',
+        'after_widget' => '</li>',
         'before_title' => '<h2>',
         'after_title' => '</h2>',
     ));
     register_sidebar(array(
         'name' => 'Footer',
-        'before_widget' => '<div id="footer">',
-        'after_widget' => '</div>',
+        'before_widget' => '<li>',
+        'after_widget' => '</li>',
         'before_title' => '<h3>',
         'after_title' => '</h3>',
     ));
     register_sidebar(array(
         'name' => 'Footer gauche',
-        'before_widget' => '<div id="footer">',
-        'after_widget' => '</div>',
+        'before_widget' => '<li>',
+        'after_widget' => '</li>',
         'before_title' => '<h3>',
         'after_title' => '</h3>',
     ));
     register_sidebar(array(
         'name' => 'Footer droite',
-        'before_widget' => '<div id="footer">',
-        'after_widget' => '</div>',
+        'before_widget' => '<li>',
+        'after_widget' => '</li>',
         'before_title' => '<h3>',
         'after_title' => '</h3>',
     ));
     register_sidebar(array(
         'name' => 'Colonne Gauche',
-        'before_widget' => '<div id="sidebar-left">',
-        'after_widget' => '</div>',
+        'before_widget' => '<li>',
+        'after_widget' => '</li>',
         'before_title' => '<h3>',
         'after_title' => '</h3>',
     ));
     register_sidebar(array(
         'name' => 'Colonne Droite',
-        'before_widget' => '<div id="sidebar-right">',
-        'after_widget' => '</div>',
+        'before_widget' => '<li>',
+        'after_widget' => '</li>',
         'before_title' => '<h3>',
         'after_title' => '</h3>',
     ));
