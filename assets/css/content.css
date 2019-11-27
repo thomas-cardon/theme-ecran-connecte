@@ -11,6 +11,10 @@ body {
     font-size: 1.1rem;
 }
 
+#tv_body {
+    overflow: hidden;
+}
+
 .flex-content {
     display: flex;
     flex-direction: row;
