@@ -1,8 +1,6 @@
 /* SIDEBAR */
 #sidebar-left, #sidebar-right {
-    margin-top: 10px;
     width: 30%;
-    margin-bottom: 13vh;
 }
 
 .sidebar ul {

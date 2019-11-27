@@ -34,13 +34,11 @@ if (function_exists('downloadFileICS_func')) {
     $page = get_page_by_title('Mon compte');
     $linkAccount = get_permalink($page->ID);
 
-    $page = get_page_by_title('Inscription');
-    $linkInscrip = get_permalink($page->ID);
     ?>
     <nav class="menu" id="myMenu">
         <ul>
             <?php if (!is_user_logged_in()) { ?>
-                <li><a class="menu-item" href="<?php echo wp_login_url(); ?>">Connexion</a></li>
+                <li><a class="menu-item" href="<?php echo wp_login_url(home_url()); ?>">Connexion</a></li>
             <?php } elseif (is_user_logged_in() && !in_array("technician", $current_user->roles)) { ?>
                 <li class="menu-item_dropdown menu-item">
                     <button class="dropbtn">Emploi du temps
@@ -86,7 +84,7 @@ if (function_exists('downloadFileICS_func')) {
                             </div>
                         </li>
                     <?php } ?>
-                    <?php if (in_array('secretaire', $current_user->roles) || in_array('administrator', $current_user->roles)) { ?>
+                    <?php if (in_array('administrator', $current_user->roles)) { ?>
                         <li><a class="menu-item" href="<?php echo $linkCode; ?>"> Codes ADE</a></li>
                     <?php }
                 } ?>

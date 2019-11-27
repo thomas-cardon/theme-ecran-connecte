@@ -23,6 +23,22 @@ function my_customize_schedule_register($wp_customize)
             'hide' => 'Ne pas afficher le message',
         ),
     ) );
+
+	$wp_customize->add_setting( 'ecran_connecte_schedule_scroll' , array(
+		'default'     => true,
+		'transport'   => 'refresh',
+	) );
+
+	$wp_customize->add_control( 'ecran_connecte_schedule_scroll', array(
+		'label' => 'Lors de l\'affichage de plusieurs emplois du temps',
+		'section' => 'ecran_connecte_schedule',
+		'settings' => 'ecran_connecte_schedule_scroll',
+		'type' => 'radio',
+		'choices' => array(
+			'vert' => 'Faire un défilement vertical',
+			'one' => 'Afficher les emplois du temps un par un',
+		),
+	) );
 }
 
 add_action('customize_register', 'my_customize_schedule_register');

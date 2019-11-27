@@ -1,42 +1,52 @@
 <?php get_header();
-$current_user = wp_get_current_user(); ?>
-<?php
+$current_user = wp_get_current_user();
 
-$id = "content-twocolumns";
-$model = new AdminModel();
-$results = $model->getModif('column');
-$col = $results[0]->content;
-if ($col == 'left' || $col == 'two') {
-    if (!wp_is_mobile()) {
-        get_sidebar('left');
-    }
+
+
+$id = "none";
+if ( ! wp_is_mobile() ) {
+	get_sidebar( 'left' );
 }
 
-$id = $col;
+if ( get_theme_mod( 'sidebar_right_display', 'show' ) == 'show' && get_theme_mod( 'sidebar_left_display', 'hide' ) == 'show' ) {
+	$id = "two";
+} else if ( get_theme_mod( 'sidebar_right_display', 'show' ) == 'show' || get_theme_mod( 'sidebar_left_display', 'show' ) == 'show' ) {
+	$id = "right";
+}
 
-if (in_array("technicien", $current_user->roles)) {
-    $id = "none";
-} else if (in_array("technicien", $current_user->roles)) {
-    $id = "-tv";
+if ( in_array( "technicien", $current_user->roles ) ) {
+	$id = "none";
+} else if ( in_array( "technicien", $current_user->roles ) ) {
+	$id = "-tv";
 }
-echo '<main id="content-' . $id . '">
-    <section>';
-if (defined('TV_PLUG_PATH')) {
-    displaySchedule();
-}
+echo '
+<script src="/wp-content/themes/theme-ecran-connecte/assets/js/refresh.js"></script>
+<main id="content-' . $id . '">
+    <section>'; ?>
+<?php if ( have_posts() ) : ?>
+	<?php while ( have_posts() ) : the_post(); ?>
+        <article class="post" id="post-<?php the_ID(); ?>">
+            <!--    <h2><a href="<?php //the_permalink(); ?>" title="<?php //the_title(); ?>"><?php //the_title(); ?></a></h2> -->
+            <div class="post_content"><?php the_content(); ?></div>
+        </article>
+	<?php endwhile; ?>
+<?php endif;
 echo '
 </section>
 </main>';
-if ($col == 'left' || $col == 'two') {
-    if (wp_is_mobile()) {
-        get_sidebar('left');
-    }
+if ( wp_is_mobile() ) {
+	get_sidebar( 'left' );
 }
 
-if($col == 'right' || $col == 'two') {
-    get_sidebar();
-}
+get_sidebar();
 
-include_once 'template-parts/footer/footer_front.php'; ?>
+if ( get_theme_mod( 'ecran_connecte_footer_weather', 'right' ) == 'hide' ) {
+	include_once 'template-parts/footer/footer_alert.php';
+} else if ( get_theme_mod( 'ecran_connecte_footer_weather', 'right' ) == 'right' ) {
+	include_once 'template-parts/footer/footer_front.php';
+} else if ( get_theme_mod( 'ecran_connecte_footer_weather', 'right' ) == 'left' ) {
+	include_once 'template-parts/footer/footer_left.php';
+} ?>
+
 </body>
 </html>
