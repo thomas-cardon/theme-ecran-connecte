@@ -1,4 +1,4 @@
-<?php ?>
+<?php $current_user = wp_get_current_user(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -16,10 +16,12 @@
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
     <script src="/wp-content/themes/theme-ecran-connecte/assets/js/jquery-3.3.1.min.js"></script>
     <script src="/wp-content/themes/theme-ecran-connecte/assets/js/jquery-ui.min.js"></script>
+    <?php if ( in_array( "television", $current_user->roles ) ) {
+        echo '<script src="/wp-content/themes/theme-ecran-connecte/assets/js/refresh.js"></script>';
+    } ?>
 	<?php wp_get_archives( 'type=monthly&format=link' ); ?> <?php //comments_popup_script(); <?php wp_head(); ?>
 </head>
 <?php
-$current_user = wp_get_current_user();
 if ( in_array( 'television', $current_user->roles ) ) {
 ?>
 <body id="tv_body" <?php body_class(); ?>>
