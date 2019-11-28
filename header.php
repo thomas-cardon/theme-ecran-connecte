@@ -28,21 +28,22 @@ if ( in_array( 'television', $current_user->roles ) ) {
 <?php } ?>
 
 <?php wp_body_open(); ?>
-<header>
-	<?php if ( class_exists( Television::class ) ) {
+<?php if ( class_exists( Television::class ) ) {
 	$current_user = wp_get_current_user();
 	if ( in_array( "television", $current_user->roles ) ) { ?>
-    <a href="<?php echo wp_logout_url( home_url() ); ?>" class="logo-tv" rel="home">
-        <img src="<?php header_image(); ?>" alt="Logo du site"/>
-    </a>
-</header>
-<?php } else { ?>
-    <a href="javascript:void(0);" class="icon" onclick="switchMenu()">&#9776;</a>
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo" rel="home">
-        <img src="<?php header_image(); ?>" alt="Logo du site"/>
-    </a>
-    </header>
-	<?php include_once 'template-parts/navigation/menu.php'; ?>
-<?php }
+        <header class="logo-tv">
+            <a href="<?php echo wp_logout_url( home_url() ); ?>" rel="home">
+                <img src="<?php header_image(); ?>" alt="Logo du site"/>
+            </a>
+        </header>
+	<?php } else { ?>
+        <header>
+            <a href="javascript:void(0);" class="icon" onclick="switchMenu()">&#9776;</a>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo" rel="home">
+                <img src="<?php header_image(); ?>" alt="Logo du site"/>
+            </a>
+        </header>
+		<?php include_once 'template-parts/navigation/menu.php'; ?>
+	<?php }
 } ?>
 <div class="flex-content">

@@ -4,8 +4,8 @@ header {
     background-color: #00558b;
     color: #ffffff;
     border-bottom: 1px solid black;
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
+    flex-direction: row;
 }
 
 .icon {
@@ -13,7 +13,6 @@ header {
 }
 
 a.icon {
-    float: left;
     color: #ffffff;
     font-size: 8vh;
     display: block;
@@ -27,16 +26,13 @@ a.icon:hover {
 
 header a img {
     margin-left: 4vw;
-    float: left;
     width: auto;
     height: auto;
 }
 
-header a.logo-tv {
+.logo-tv {
     display: flex;
     justify-content: space-around;
-    float: none;
-    width: auto;
 }
 
 header a.logo-tv img {
