@@ -17,6 +17,9 @@
     <script src="/wp-content/themes/theme-ecran-connecte/assets/js/jquery-3.3.1.min.js"></script>
     <script src="/wp-content/themes/theme-ecran-connecte/assets/js/jquery-ui.min.js"></script>
     <?php if ( in_array( "television", $current_user->roles ) ) {
+	    if(get_theme_mod('ecran_connecte_shecule_scroll', 'vert') == 'vert') {
+		    echo '<script src="/wp-content/plugins/plugin-ecran-connecte/views/js/scroll.js"></script>';
+	    }
         echo '<script src="/wp-content/themes/theme-ecran-connecte/assets/js/refresh.js"></script>';
     } ?>
 	<?php wp_get_archives( 'type=monthly&format=link' ); ?> <?php //comments_popup_script(); <?php wp_head(); ?>

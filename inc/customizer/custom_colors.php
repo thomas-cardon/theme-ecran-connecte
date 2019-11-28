@@ -339,7 +339,7 @@ function ecran_connecte_customizer_css()
     <?php
 }
 
-add_action('customize_preview_init', 'cd_customizer');
+//add_action('customize_preview_init', 'cd_customizer');
 function cd_customizer()
 {
     wp_enqueue_script(
