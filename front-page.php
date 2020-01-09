@@ -16,7 +16,7 @@ if ( in_array( "technicien", $current_user->roles ) ) {
 }
 
 if ( defined( "TV_PLUG_PATH" ) ) {
-	$model  = new InformationManager();
+	$model  = new InformationModel();
 	$result = $model->getListInformationEvent();
 	if ( $result && in_array( "television", $current_user->roles )) {
 
@@ -24,22 +24,26 @@ if ( defined( "TV_PLUG_PATH" ) ) {
 		echo '
         <!DOCTYPE html>
         <html lang="fr">
+        <!-- HEAD -->
         <head>
             <meta charset="utf-8">
-            <script src="/wp-content/plugins/plugin-ecran-connecte/views/js/scroll.js"></script>';
+            <script src="/wp-content/plugins/plugin-ecran-connecte/js/scroll.js"></script>';
             wp_head();
             echo '
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
         </head>'; ?>
+        <!-- BODY -->
         <body id="event" <?php body_class(); ?>>
         <?php
         echo '
+        <!-- MAIN -->
             <main id="content-event">
                 <section>';
 	    $controller->displayEvent();
 		echo '
             </section>
         </main>
+        <!-- FOOTER -->
         <footer>';
 		wp_footer();
 		echo '</footer>';
@@ -62,6 +66,7 @@ function displayHome($id) {
 		get_sidebar( 'left' );
 	}
 	echo '
+	<!-- MAIN -->
     <main id="content-' . $id . '">
         <section>';
 	if ( have_posts() ) {
