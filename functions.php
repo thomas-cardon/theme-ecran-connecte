@@ -8,24 +8,6 @@ include_once 'inc/customizer/custom_footer.php';
 add_filter('auto_update_plugin', '__return_true');
 add_filter('auto_update_theme', '__return_true');
 
-
-/**
- * Used by hook: 'customize_preview_init'
- * @see add_action('customize_preview_init',$func)
- */
-function mytheme_customizer_live_preview()
-{
-    wp_enqueue_script(
-        'mytheme-themecustomizer',            //Give the script an ID
-        get_template_directory_uri() . '/assets/js/theme-customizer.js',//Point to file
-        array('jquery', 'customize-preview'),    //Define dependencies
-        '',                        //Define a version (optional)
-        true                        //Put script in footer?
-    );
-}
-
-add_action('customize_preview_init', 'mytheme_customizer_live_preview');
-
 /**
  * Charge les fichiers CSS et Javascript
  */
@@ -40,7 +22,6 @@ function add_theme_scripts()
     wp_enqueue_script( 'theme-jquery', get_template_directory_uri() . '/assets/js/jquery-3.3.1.min.js', array (), '', false);
     wp_enqueue_script( 'theme-jqueryUI', get_template_directory_uri() . '/assets/js/jquery-ui.min.js', array ( 'jquery' ), '', false);
     wp_enqueue_script('theme-menu', get_template_directory_uri() . '/assets/js/menu.js', array('jquery'), '', false);
-    wp_enqueue_script('theme-custom', get_template_directory_uri() . '/assets/js/customizer.js', array('jquery'), '', true);
     wp_enqueue_script('theme-popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array(), '', true);
     wp_enqueue_script('theme-bootstrapjs', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array(), '', true);
 }
