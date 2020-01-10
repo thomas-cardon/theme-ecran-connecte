@@ -2,8 +2,8 @@
 
 if (function_exists('downloadFileICS_func')) {
     $current_user = wp_get_current_user();
-    if (class_exists(CodeAdeManager::class)) {
-        $model = new CodeAdeManager();
+    if (class_exists(CodeAdeModel::class)) {
+        $model = new CodeAdeModel();
         $years = $model->getCodeYear();
     }
 
