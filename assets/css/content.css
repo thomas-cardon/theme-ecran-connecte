@@ -54,8 +54,7 @@ h2 {
     letter-spacing: 1px;
     font-family: "Titillium Web", sans-serif;
     color: #00558a;
-    margin-top: 10px;
-    margin-bottom: .5rem;
+    margin: 0;
     font-style: normal;
     font-weight: 300;
 }
