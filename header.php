@@ -1,57 +1,55 @@
-<?php $current_user = wp_get_current_user(); ?>
+<?php
+
+use Controllers\TelevisionController;
+
+$current_user = wp_get_current_user();
+
+echo '
 <!DOCTYPE html>
 <html lang="fr">
 <!-- HEAD -->
 <head>
     <meta charset="utf-8">
-	<?php wp_head(); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="WordPress <?php bloginfo( 'version' ); ?>"/> <!-- leave this for stats -->
-    <title><?php bloginfo( 'name' ) ?><?php if ( is_404() ) : ?> &raquo; <?php _e( 'Not Found' ) ?><?php elseif ( is_home() ) : ?> &raquo; <?php bloginfo( 'description' ) ?><?php else : ?><?php wp_title() ?><?php endif ?></title>
-    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo( 'rss2_url' ); ?>"/>
-    <link rel="alternate" type="text/xml" title="RSS .92" href="<?php bloginfo( 'rss_url' ); ?>"/>
-    <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo( 'atom_url' ); ?>"/>
-    <!--<script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
-    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>"/>
-    <link rel="manifest" href="/manifest.json"/>
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script src="/wp-content/themes/theme-ecran-connecte/assets/js/jquery-3.3.1.min.js"></script>
-    <script src="/wp-content/themes/theme-ecran-connecte/assets/js/jquery-ui.min.js"></script>
-    <?php if ( in_array( "television", $current_user->roles ) ) {
+    <title>Ecran connecté</title>
+    <!-- <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script> -->'.
+    wp_head();
+    if (in_array("television", $current_user->roles)) {
 	    if(get_theme_mod('ecran_connecte_shecule_scroll', 'vert') == 'vert') {
-		    echo '<script src="/wp-content/plugins/plugin-ecran-connecte/js/scroll.js"></script>';
+		    echo '<script src="/wp-content/plugins/plugin-ecran-connecte/public/js/scroll.js"></script>';
 	    }
         echo '<script src="/wp-content/themes/theme-ecran-connecte/assets/js/refresh.js"></script>';
-    } ?>
-	<?php wp_get_archives( 'type=monthly&format=link' ); ?> <?php //comments_popup_script(); <?php wp_head(); ?>
-</head>
-<!-- BODY -->
-<?php
-if ( in_array( 'television', $current_user->roles ) ) {
-?>
-<body id="tv_body" <?php body_class(); ?>>
-<?php } else { ?>
-<body <?php body_class(); ?>>
-<?php } ?>
+    }
+echo '</head><!-- BODY -->';
 
-<?php wp_body_open(); ?>
-<!-- HEADER -->
-<?php if ( class_exists( Television::class ) ) {
+if ( in_array( 'television', $current_user->roles ) ) {
+    echo '<body id="tv_body" '; echo body_class(). ' >';
+} else {
+	echo '<body '; echo body_class(). ' >';
+}
+
+wp_body_open();
+
+if (class_exists(TelevisionController::class)) {
 	$current_user = wp_get_current_user();
-	if ( in_array( "television", $current_user->roles ) ) { ?>
+	if (in_array("television", $current_user->roles)) {
+	    echo '
+        <!-- HEADER -->
         <header class="logo-tv">
-            <a href="<?php echo wp_logout_url( home_url() ); ?>" rel="home">
-                <img src="<?php header_image(); ?>" alt="Logo du site"/>
+            <a href="'.wp_logout_url(home_url()).'" rel="home">
+                <img src="'; echo header_image().'" alt="Logo du site"/>
             </a>
-        </header>
-	<?php } else { ?>
-        <header>
-            <a href="javascript:void(0);" class="icon" onclick="switchMenu()">&#9776;</a>
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo" rel="home">
-                <img src="<?php header_image(); ?>" alt="Logo du site"/>
-            </a>
-        </header>
-		<?php include_once 'template-parts/navigation/menu.php'; ?>
-	<?php }
-} ?>
-<div class="flex-content">
+        </header>';
+	} else {
+		echo '
+		<header>
+			<a href="javascript:void(0);" class="icon" onclick="switchMenu()">&#9776;</a>
+			<a href="'.esc_url(home_url()).'" rel="home">
+	            <img class="logo" src="'; echo header_image().'" alt="Logo du site"/>
+	        </a>
+        </header>';
+		include_once 'template-parts/navigation/menu.php';
+	}
+}
+echo '<div class="flex-content">';
+

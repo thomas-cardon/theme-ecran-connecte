@@ -8,6 +8,21 @@ include_once 'inc/customizer/custom_footer.php';
 add_filter('auto_update_plugin', '__return_true');
 add_filter('auto_update_theme', '__return_true');
 
+/*
+error_reporting(0);
+
+function wp_maintenance_mode()
+{
+	if(!current_user_can('edit_themes') || !is_user_logged_in()) {
+		wp_die('<h1 style="color:red">Site en maintenance</h1>
+<br />Le site est en cours de maintenance, merci de bien patienter
+<script src="/wp-content/themes/theme-ecran-connecte/assets/js/refresh.js"></script>');
+	}
+}
+add_action('get_header', 'wp_maintenance_mode');
+*/
+
+
 /**
  * Charge les fichiers CSS et Javascript
  */

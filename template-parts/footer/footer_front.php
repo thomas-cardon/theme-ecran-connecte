@@ -14,7 +14,6 @@
             the_widget('WidgetWeather');
         endif; ?>
     </div>
-    <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer')) : endif; ?>
     </footer>
     <footer class="footer_wp">
         <?php wp_footer(); ?>
