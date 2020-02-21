@@ -1,9 +1,14 @@
 /* HEADER */
+
+.logo {
+    width: 200px;
+    height: auto;
+}
+
 header {
     width: 100%;
     background-color: #00558b;
     color: #ffffff;
-    border-bottom: 1px solid black;
     display: flex;
     flex-direction: row;
 }
@@ -14,7 +19,7 @@ header {
 
 a.icon {
     color: #ffffff;
-    font-size: 8vh;
+    font-size: 40px;
     display: block;
     text-decoration: none;
     text-underline: none;

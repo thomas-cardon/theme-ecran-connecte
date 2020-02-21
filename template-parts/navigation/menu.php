@@ -1,12 +1,15 @@
 <?php
 
+use Models\CodeAde;
+
 if (function_exists('downloadFileICS_func')) {
     $current_user = wp_get_current_user();
-    if (class_exists(CodeAdeModel::class)) {
-        $model = new CodeAdeModel();
-        $years = $model->getCodeYear();
+    if (class_exists(CodeAde::class)) {
+        $model = new CodeAde();
+        $years = $model->getAllFromType('year');
     }
 
+    // Url of all pages of Wordpress
     $page = get_page_by_title('Emploi du temps');
     $linkEDT = get_permalink($page->ID);
 
@@ -47,7 +50,7 @@ if (function_exists('downloadFileICS_func')) {
                     <div class="menu-item_dropdown-content">
                         <?php if (isset($years)) {
                             foreach ($years as $year) { ?>
-                                <a href="<?php echo $linkEDT . $year['code']; ?>/"> <?php echo $year['title'] ?></a>
+                                <a href="<?php echo $linkEDT . $year->getId(); ?>/"> <?php echo $year->getTitle() ?></a>
                             <?php }
                         } ?>
                     </div>
