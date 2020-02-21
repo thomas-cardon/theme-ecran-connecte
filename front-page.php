@@ -1,4 +1,8 @@
 <?php
+
+use Controllers\InformationController;
+use Models\Information;
+
 $current_user = wp_get_current_user();
 
 $id = "none";
@@ -15,19 +19,20 @@ if ( in_array( "technicien", $current_user->roles ) ) {
 	$id = "-tv";
 }
 
-if ( defined( "TV_PLUG_PATH" ) ) {
-	$model  = new InformationModel();
+if (defined( "TV_PLUG_PATH")) {
+	$model  = new Information();
 	$result = $model->getListInformationEvent();
-	if ( $result && in_array( "television", $current_user->roles )) {
+	if ($result && in_array( "television", $current_user->roles )) {
 
-	    $controller = new Information();
+	    $controller = new InformationController();
 		echo '
         <!DOCTYPE html>
         <html lang="fr">
         <!-- HEAD -->
         <head>
+            <title>Ecran connecté</title>
             <meta charset="utf-8">
-            <script src="/wp-content/plugins/plugin-ecran-connecte/js/scroll.js"></script>';
+            <script src="/wp-content/plugins/plugin-ecran-connecte/public/js/scroll.js"></script>';
             wp_head();
             echo '
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -91,5 +96,7 @@ function displayHome($id) {
 		include_once 'template-parts/footer/footer_front.php';
 	} else if ( get_theme_mod( 'ecran_connecte_footer_weather', 'right' ) == 'left' ) {
 		include_once 'template-parts/footer/footer_left.php';
-	}
+	} else {
+		get_footer();
+    }
 }

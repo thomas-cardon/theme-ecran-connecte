@@ -1,37 +1,29 @@
 <?php get_header();
-$current_user = wp_get_current_user(); ?>
-<?php
+$current_user = wp_get_current_user();
 
 $id = "none";
 
 if (in_array("television", $current_user->roles)) {
     $id = "-tv";
 }
-echo '<main id="content-' . $id . '">
+echo '
+<main id="content-' . $id . '">
     <section>';
 
-//$content = file_get_contents("https://www.nuitdelinfo.com/inscription/sites/55");
-//$res = explode ('Partcipants', $content);
-//echo $res[0];
-
-?>
-<?php if (have_posts()) : ?>
-    <?php while (have_posts()) : the_post(); ?>
+if (have_posts()) {
+    while (have_posts()) : the_post(); ?>
         <article class="post" id="post-<?php the_ID(); ?>">
             <!--    <h2><a href="<?php //the_permalink(); ?>" title="<?php //the_title(); ?>"><?php //the_title(); ?></a></h2> -->
             <div class="post_content"><?php the_content(); ?></div>
         </article>
-    <?php endwhile; ?>
-<?php endif;
-echo '
-</section>
-</main>';
-if ($col == 'left' || $col == 'two') {
-    if (wp_is_mobile()) {
-        get_sidebar('left');
-    }
+    <?php endwhile;
 }
-get_footer(); ?>
+echo '
+    </section>
+</main>';
 
-</body>
-</html>
+get_footer();
+
+echo '
+    </body>
+</html>';
