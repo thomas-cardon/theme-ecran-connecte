@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Custom schedule
+ *
+ * @param $wp_customize
+ */
 function my_customize_schedule_register($wp_customize)
 {
     $wp_customize->add_section( 'ecran_connecte_schedule' , array(

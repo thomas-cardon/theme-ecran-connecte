@@ -3,6 +3,10 @@
     src: url("../fonts/Titillium-Regular.otf");
 }
 
+html {
+    margin: 0 !important;
+}
+
 /* CONTENT */
 body {
     margin: 0;
@@ -186,32 +190,8 @@ input[type=button], input[type=submit], input[type=reset], button {
         float: none;
     }
 
-    #content-two, #content-right, #content-left {
+    #content-none, #content-two, #content-right, #content-left {
         width: 90%;
-    }
-
-    /* SIDEBAR */
-    #sidebar-left {
-        float: none;
-        margin-top: 1%;
-        width: 100%;
-        border-top: 1px solid darkgrey;
-    }
-
-    #sidebar-right {
-        float: none;
-        margin-top: 1%;
-        width: 100%;
-        border-top: 1px solid darkgrey;
-    }
-
-    #footer-left {
-        float: none;
-        width: 100%;
-    }
-
-    #footer-right {
-        display: none;
     }
 }
 
@@ -239,9 +219,8 @@ input[type=button], input[type=submit], input[type=reset], button {
 
 @media (max-width: 640px) {
 
-    #footer-left {
-        width: 100%;
-        float: none;
+    th {
+        font-size: 100%;
     }
 
     #content {
@@ -256,7 +235,6 @@ input[type=button], input[type=submit], input[type=reset], button {
         margin-left: 0;
     }
 
-    /* masquer les éléments superflus */
     .hide_mobile {
         display: none !important;
     }

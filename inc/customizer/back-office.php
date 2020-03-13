@@ -291,7 +291,7 @@ $args = array(
 );
 add_theme_support('custom-header-background', $args);
 
-// Les différentes sidebars
+// Sidebars
 if (function_exists('register_sidebar')) {
     register_sidebar(array(
         'name' => 'Header',

@@ -1,7 +1,9 @@
 /* SIDEBAR */
-#sidebar-left, #sidebar-right {
+
+.sidebar {
     margin-top: 10px;
     width: 30%;
+    background-color: white;
 }
 
 .sidebar ul {
@@ -10,62 +12,18 @@
     padding-left: 0;
 }
 
-.sidebar ul li {
-}
-
-.sidebar ul ul li {
-}
-
-#sidebar h2 {
-    font-size: 2em;
-}
-
-.sidebar a:hover {
-    text-decoration: none;
-    border-bottom: 1px dotted;
-}
-
 @media (max-width: 1400px) {
-    #sidebar-right, #sidebar-left {
+    .sidebar {
         height: auto;
-        margin-bottom: 30vh;
     }
 }
 
 @media (max-width: 1200px) {
-    #sidebar-right, #sidebar-left {
-        margin-top: 20px;
-        width: 100%;
-
+    .sidebar {
+        margin: 10px 5% 0;
+        width: 90%;
+        min-height: 70vh;
+        float: none;
         border-top: 1px solid darkgrey;
-        border-left: none;
-        margin-bottom: 0;
     }
 }
-
-@media (max-height: 1200px) and (max-width: 780px) {
-    #sidebar-right, #sidebar-left {
-
-    }
-}
-
-/*@media (max-width: 850px) {*/
-/*    */
-/*}*/
-@media (max-height: 880px) and (max-width: 500px) {
-    #sidebar-right, #sidebar-left {
-
-    }
-}
-
-@media (max-height: 850px) and (max-width: 450px) {
-    #sidebar-right, #sidebar-left {
-
-    }
-}
-
-/*@media (max-height: 740px) {*/
-/*    #sidebar-right, #sidebar-left {*/
-/*        height: 90vh;*/
-/*    }*/
-/*}*/

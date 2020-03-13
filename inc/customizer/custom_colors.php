@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Custom color of the website
+ *
+ * @param $wp_customize
+ */
 function my_customize_color_register($wp_customize)
 {
 
@@ -310,6 +315,9 @@ function generate_css($selector, $style, $mod_name, $prefix = '', $postfix = ' !
 
 
 add_action('wp_head', 'ecran_connecte_customizer_css');
+/**
+ * Create the custom CSS
+ */
 function ecran_connecte_customizer_css()
 {
     ?>
@@ -340,6 +348,9 @@ function ecran_connecte_customizer_css()
 }
 
 add_action('customize_preview_init', 'cd_customizer');
+/**
+ * Js to see the change immediately
+ */
 function cd_customizer()
 {
     wp_enqueue_script(
