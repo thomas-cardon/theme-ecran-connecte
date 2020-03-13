@@ -8,9 +8,9 @@ include_once 'inc/customizer/custom_footer.php';
 add_filter('auto_update_plugin', '__return_true');
 add_filter('auto_update_theme', '__return_true');
 
-/*
-error_reporting(0);
 
+error_reporting(0);
+/*
 function wp_maintenance_mode()
 {
 	if(!current_user_can('edit_themes') || !is_user_logged_in()) {
