@@ -1,6 +1,10 @@
-<?php ?>
+<?php
+
+echo '
+<!-- FOOTER -->
 <footer>
-    <div class="footer_wp">
-        <?php wp_footer(); ?>
+    <div class="footer_wp">';
+        wp_footer();
+echo '
     </div>
-</footer>
+</footer>';
