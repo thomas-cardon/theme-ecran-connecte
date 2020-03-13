@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Custom footer
+ *
+ * @param $wp_customize
+ */
 function my_customize_footer_register($wp_customize)
 {
     $wp_customize->add_section( 'ecran_connecte_footer' , array(

@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Custom sidebar
+ *
+ * @param $wp_customize
+ */
 function my_customize_sidebar_register($wp_customize)
 {
     $wp_customize->add_section( 'ecran_connecte_sidebar' , array(

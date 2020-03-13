@@ -12,7 +12,7 @@ echo '
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecran connecté</title>
-    <!-- <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script> -->'.
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>'.
     wp_head();
     if (in_array("television", $current_user->roles)) {
 	    if(get_theme_mod('ecran_connecte_shecule_scroll', 'vert') == 'vert') {
@@ -31,7 +31,6 @@ if ( in_array( 'television', $current_user->roles ) ) {
 wp_body_open();
 
 if (class_exists(TelevisionController::class)) {
-	$current_user = wp_get_current_user();
 	if (in_array("television", $current_user->roles)) {
 	    echo '
         <!-- HEADER -->
