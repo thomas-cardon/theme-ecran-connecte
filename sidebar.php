@@ -1,12 +1,17 @@
-<?php
+<?php if(get_theme_mod('sidebar_right_display', 'show') == 'show') : ?>
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="col-md-4 order-md-3 text-center sidebar" role="complementary">
+        <?php if (! function_exists('dynamic_sidebar') || ! dynamic_sidebar('Colonne Droite')) :
+            the_widget('WidgetInformation');
+        endif; ?>
+    </aside>
+<?php endif; ?>
 
-$current_user = wp_get_current_user();
-if (is_user_logged_in() && !in_array("technicien", $current_user->roles)) {
-    if( get_theme_mod( 'sidebar_right_display', 'show' ) == 'show' ) {
-	    echo '<div class="sidebar" id="sidebar-right">';
-            if (! function_exists('dynamic_sidebar') || ! dynamic_sidebar('Colonne Droite')) {
-		    the_widget('WidgetInformation');
-	    }
-        echo '</div>';
-    }
-}
+<?php if(get_theme_mod('sidebar_left_display', 'hide') == 'show') : ?>
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="col-md-4 order-md-1 text-center sidebar" role="complementary">
+        <?php if (! function_exists('dynamic_sidebar') || ! dynamic_sidebar('Colonne Gauche')) :
+            the_widget('WidgetInformation');
+        endif; ?>
+    </aside>
+<?php endif; ?>
