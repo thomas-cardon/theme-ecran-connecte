@@ -12,9 +12,11 @@
     width: 100%;
 }
 
-.footer_alert {
+footer {
     position: sticky;
     bottom: 0;
+}
+.footer_alert {
     padding: 0;
     min-width: 100%;
     display: flex;
