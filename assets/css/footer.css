@@ -12,7 +12,7 @@
     width: 100%;
 }
 
-footer {
+.footer_alert_etudiant {
     position: sticky;
     bottom: 0;
 }

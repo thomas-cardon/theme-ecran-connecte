@@ -33,7 +33,3 @@ a:hover {
     border-color: #00558b;
     color: #00558b;
 }
-/* to fix the sticky footer*/
-main {
-    height: 90000px;
-}
