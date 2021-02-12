@@ -25,9 +25,7 @@ if((in_array('etudiant', $current_user->roles) || in_array('television', $curren
             </div>
         <?php }
         if ($order > 0) {
-            if(in_array('etudiant', $current_user->roles) || in_array('enseignant',$current_user->roles)) {
-                $class = 'footer_weather col-md-4 order-md-'.$order;
-            } else {
+            if(in_array('television', $current_user->roles)) {
                 $class = 'footer_weather_television col-md-4 order-md-' . $order;
             ?>
             <div class = "<?php echo $class; ?>">
