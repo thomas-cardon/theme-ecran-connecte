@@ -13,6 +13,8 @@
 }
 
 .footer_alert {
+    position: sticky;
+    bottom: 0;
     padding: 0;
     min-width: 100%;
     display: flex;
