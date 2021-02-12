@@ -1,5 +1,7 @@
 /* HEADER */
 .nav_ecran {
+    position: sticky;
+    top: 0;
     background-color: #00558b;
     margin-bottom: 10px;
     min-height: 5vh;
