@@ -9,6 +9,11 @@
             </div>
             <input id="search" name="search" type="text" placeholder="Recherchez des utilisateurs, des groupes" autoComplete="off" />
           </div>
+          <ul class="searchbar-suggestions">
+          </ul>
+          <div class="no-suggestions" style="display: none;">
+            <em>Aucune suggestion disponible.</em>
+          </div>
           <!-- header -->
         </div>
       </header>
