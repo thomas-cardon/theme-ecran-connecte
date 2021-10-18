@@ -21,4 +21,5 @@
         </div>
         <?php remove_filter('the_content', 'wpautop'); the_content(); ?>
       </div>
+      <!-- Side bar right-->
     <?php get_footer('tablet'); ?>
