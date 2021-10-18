@@ -26,6 +26,12 @@ function add_scripts()
 {
   $current_user = wp_get_current_user();
 
+  if (is_page('tablet-view')) {
+    wp_enqueue_script('tablet_search', get_template_directory_uri() . '/assets/js/search.js');
+    wp_enqueue_style( 'tablet_theme', get_template_directory_uri() . '/assets/css/tablet.css');
+    return;
+  }
+
   //Bootstrap
   wp_enqueue_style('bootstrap_css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css');
   wp_enqueue_script('bootstrap_js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js', array(), false, true);
@@ -33,15 +39,6 @@ function add_scripts()
   if(in_array('television', $current_user->roles)) {
 		wp_enqueue_script('refresh_ecran', get_template_directory_uri().'/assets/js/refresh.js');
 	}
-
-  // CSS
-
-
-  if (is_page('tablet-view')) {
-    wp_enqueue_script('tablet_search', get_template_directory_uri().'/assets/js/search.js');
-    wp_enqueue_style( 'tablet_theme', get_template_directory_uri() . '/assets/css/tablet.css');
-    return;
-  }
 
   wp_enqueue_style( 'style_ecran', get_template_directory_uri() . '/style.css');
 
@@ -51,17 +48,6 @@ function add_scripts()
   wp_enqueue_style( 'footer_ecran_theme', get_template_directory_uri().'/assets/css/footer.css');
 }
 add_action('wp_enqueue_scripts', 'add_scripts');
-
-
-/**
- * Load all scripts (CSS / JS)
- */
-function add_theme_scripts()
-{
-    wp_enqueue_script( 'theme-jquery', get_template_directory_uri() . '/assets/js/vendor/jquery-3.3.1.min.js', array (), '', false);
-    wp_enqueue_script( 'theme-jqueryUI', get_template_directory_uri() . '/assets/js/vendor/jquery-ui.min.js', array ( 'jquery' ), '', false);
-}
-//add_action('wp_enqueue_scripts', 'add_theme_scripts');
 
 /**
  * CSS for login page

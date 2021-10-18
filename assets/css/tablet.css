@@ -379,7 +379,7 @@ header.tablet > div {
 .input-container > .icon {
   pointer-events: none;
   color: var(--color-primary-300);
-  margin-left: 10px;
+  margin: 5px 0 0 10px;
   text-align: center;
 }
 
