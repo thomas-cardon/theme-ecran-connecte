@@ -24,14 +24,12 @@ add_action('get_header', 'wp_maintenance_mode');
 
 function add_scripts()
 {
-    //jQuery
-    wp_enqueue_script('jquery_cdn', 'https://code.jquery.com/jquery-3.4.1.slim.min.js');
+  $current_user = wp_get_current_user();
 
-    //Bootstrap
-    wp_enqueue_style('bootstrap_css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
-    wp_enqueue_script('bootstrap_js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', array('jquery_cdn'), '', true);
+  //Bootstrap
+  wp_enqueue_style('bootstrap_css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css');
+  wp_enqueue_script('bootstrap_js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js', array(), false, true);
 
-	$current_user = wp_get_current_user();
   if(in_array('television', $current_user->roles)) {
 		wp_enqueue_script('refresh_ecran', get_template_directory_uri().'/assets/js/refresh.js');
 	}
@@ -40,7 +38,8 @@ function add_scripts()
 
 
   if (is_page('tablet-view')) {
-    wp_enqueue_style( 'header_ecran_theme', get_template_directory_uri() . '/assets/css/tablet.css');
+    wp_enqueue_script('tablet_search', get_template_directory_uri().'/assets/js/search.js');
+    wp_enqueue_style( 'tablet_theme', get_template_directory_uri() . '/assets/css/tablet.css');
     return;
   }
 
