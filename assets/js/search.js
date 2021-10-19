@@ -54,6 +54,7 @@ function update(value, search, noSuggestionsDisplay, list = document.querySelect
 
 
 /**
+ * TODO: placer la partie REST API dans le plugin
  * Quand le DOM (https://fr.wikipedia.org/wiki/Document_Object_Model#Aspects_techniques) est chargé, on commence à écouter les changements de valeur de la barre de recherche
  */
 window.addEventListener('DOMContentLoaded', event => {
@@ -63,5 +64,12 @@ window.addEventListener('DOMContentLoaded', event => {
   .oninput = event => update(event.target.value, search, noSuggestionsDisplay);
 
   search.onblur = search.onfocus = event => update(search.value, search, noSuggestionsDisplay);
+
+  fetch(host + 'wp-json/amu-ecran-connectee/v1/ade/')
+  .then(res => res.json())
+  .then(data => data.forEach(code => {
+    entries.push({ value: code.title, action: () => alert('Action OK') })
+  }))
+  .catch(console.error);
 
 });

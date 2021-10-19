@@ -26,4 +26,8 @@
         </div>
         <?php remove_filter('the_content', 'wpautop'); the_content(); ?>
       </div>
+      <script>
+        var host = location.protocol + '//' + location.hostname + '<?php echo URL_PATH ?>';
+        console.log('<?php echo URL_PATH ?>');
+      </script>
     <?php get_footer('tablet'); ?>
