@@ -248,6 +248,7 @@ header.tablet > div {
   margin-right: .6em;
 }
 
+
 .sidebar-tablet {
   user-select: none;
 }
@@ -256,6 +257,12 @@ header.tablet > div {
   width: 85%;
   border: none;
   border-bottom: 1px solid var(--color-primary-100);
+}
+
+.sidebar-tablet a {
+  color: #fafafa;
+  text-decoration: none;
+  transition: all .3s ease;
 }
 
 @media (max-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
