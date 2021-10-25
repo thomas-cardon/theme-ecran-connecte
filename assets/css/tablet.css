@@ -512,6 +512,10 @@ header.tablet > div {
   font-weight: 800;
 }
 
+h2.location {
+  color: #8D331F;
+}
+
 .date1 {
   text-align: center;
   margin-top: 5%;
