@@ -8,6 +8,18 @@ $(document).ready(function() {
 
 	}
 
+	function refreshWeather(long = 5.4510, lat = 43.5156) {
+    let myHeaders = new Headers();
+    myHeaders.append("Accept", "application/json");
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=fr&APPID=ae546c64c1c36e47123b3d512efa723e`,
+    { method: 'GET', headers: myHeaders })
+    .then(res => res.json())
+    .then(render)
+    .catch(console.error);
+}
+
+
 	function error() {
 		console.log("C'est une erreur");
 	}

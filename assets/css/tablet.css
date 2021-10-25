@@ -510,12 +510,8 @@ header.tablet > div {
 .location {
   text-align: center;
   font-weight: 800;
+  color: lightpink(red, 25%);
 }
-
-h2.location {
-  color: #8D331F;
-}
-
 .date1 {
   text-align: center;
   margin-top: 5%;
