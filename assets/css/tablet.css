@@ -175,54 +175,6 @@ header.tablet > div {
   border-radius: 9999px;
 }
 
-.input-container {
-  display: flex;
-  width: 100%;
-  margin-bottom: 15px;
-
-  align-items: center;
-
-  height: 40px;
-
-  border-radius: .5rem;
-  color: var(--color-primary-300);
-  background-color: var(--color-primary-700);
-
-  z-index: 10;
-  margin-top: 30px;
-
-  opacity: 0.9;
-  transition: all 0.2s;
-}
-
-.input-container:hover {
-  opacity: 1;
-}
-
-
-.input-container > .icon {
-  pointer-events: none;
-  color: var(--color-primary-300);
-  margin: 5px 0 0 10px;
-  text-align: center;
-}
-
-.input-container > input {
-  width: 100%;
-  margin: 0;
-  padding: 10px 0 10px 20px;
-
-  border: none;
-  outline: none;
-
-  border-radius: 8px;
-
-  color: var(--color-primary-100);
-  background-color: transparent;
-  font-family: inherit;
-  font-size: 100%;
-}
-
 .actions, .currentClass {
   gap: 20px;
 }
@@ -296,6 +248,7 @@ header.tablet > div {
   margin-right: .6em;
 }
 
+
 .sidebar-tablet {
   user-select: none;
 }
@@ -304,6 +257,12 @@ header.tablet > div {
   width: 85%;
   border: none;
   border-bottom: 1px solid var(--color-primary-100);
+}
+
+.sidebar-tablet a {
+  color: #fafafa;
+  text-decoration: none;
+  transition: all .3s ease;
 }
 
 @media (max-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
@@ -454,4 +413,27 @@ header.tablet > div {
 
 .input-container > input[type="datetime-local"]:hover, .input-container > input::-webkit-calendar-picker-indicator:hover {
   cursor: pointer;
+}
+
+.searchbar-suggestions {
+ border-radius: .5rem;
+ color: var(--color-primary-200);
+ background-color: var(--color-primary-600);
+ z-index: 10;
+ opacity: .9;
+ list-style-type: none;
+ margin-top: -15px;
+ margin-bottom: 15px;
+ border-top-left-radius: 0;
+ border-top-right-radius: 0;
+ max-height: 8rem;
+ overflow-y: auto;
+ overflow-x: hidden;
+}
+
+.searchbar-suggestions li {
+ padding: .5rem;
+ cursor: pointer;
+ -webkit-transition: all .2s;
+ transition: all .2s
 }

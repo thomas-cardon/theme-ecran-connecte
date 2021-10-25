@@ -9,6 +9,11 @@
             </div>
             <input id="search" name="search" type="text" placeholder="Recherchez des utilisateurs, des groupes" autoComplete="off" />
           </div>
+          <ul class="searchbar-suggestions">
+          </ul>
+          <div class="no-suggestions" style="display: none;">
+            <em>Aucune suggestion disponible.</em>
+          </div>
           <!-- header -->
         </div>
       </header>
@@ -21,4 +26,8 @@
         </div>
         <?php remove_filter('the_content', 'wpautop'); the_content(); ?>
       </div>
+      <script>
+        var host = location.protocol + '//' + location.hostname + '<?php echo URL_PATH ?>';
+        console.log('<?php echo URL_PATH ?>');
+      </script>
     <?php get_footer('tablet'); ?>
