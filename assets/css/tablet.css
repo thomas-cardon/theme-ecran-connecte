@@ -228,6 +228,7 @@ header.tablet > div {
   padding: 0;
   margin-top: 2.5em;
   list-style-type: none;
+  text-align: left;
 }
 
 .item {
@@ -236,11 +237,22 @@ header.tablet > div {
   display: block;
   padding: 1.5em 1.5em 1.5em 2em;
   transition: all 0.3s ease;
+  
+  padding: 0.8em;
+  margin-bottom: 8%;
 }
+
 
 .item:hover, .brand > h3:hover {
   cursor: pointer;
   color: var(--color-secondary);
+
+  text-decoration: none;
+}
+
+#imgedt {
+  height:30px;
+  width:30px;
 }
 
 .icon {
@@ -248,10 +260,19 @@ header.tablet > div {
   margin-right: .6em;
 }
 
+.icon i {
+  transform: scale(75%);
+  transform: translateY(20%);
+}
 
 .sidebar-tablet {
   user-select: none;
 }
+
+.sidebar-tablet a{
+  text-decoration:none;
+}
+
 
 .sidebar-tablet hr {
   width: 85%;
