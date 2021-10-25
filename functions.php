@@ -26,7 +26,7 @@ function add_scripts()
 {
   $current_user = wp_get_current_user();
 
-  if (is_page('tablet-view')) {
+  if (is_page('tablet-view') || is_page('emploi-du-temps')) {
     wp_enqueue_script('tablet_search', get_template_directory_uri() . '/assets/js/search.js');
     wp_enqueue_script('tablet_weather', get_template_directory_uri() . '/assets/js/weather.js');
     wp_enqueue_style( 'tablet_theme', get_template_directory_uri() . '/assets/css/tablet.css');
