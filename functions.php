@@ -41,9 +41,10 @@ function add_scripts()
 		wp_enqueue_script('refresh_ecran', get_template_directory_uri().'/assets/js/refresh.js');
 	}
 
-  wp_enqueue_style( 'style_ecran', get_template_directory_uri() . '/style.css');
-  wp_enqueue_style( 'sidebar_ecran_theme', get_template_directory_uri().'/assets/css/sidebar.css');
+  wp_enqueue_style('theme_style', get_template_directory_uri() . '/style.css');
+  wp_enqueue_style('sidebar_ecran_theme', get_template_directory_uri().'/assets/css/sidebar.css');
 }
+
 add_action('wp_enqueue_scripts', 'add_scripts');
 
 /**

@@ -46,7 +46,7 @@ if(!in_array('television', $current_user->roles)) : ?>
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarInformationsDropdown">
                     <li><a class="dropdown-item" href="<?php echo home_url('/creer-information') ?>">Créer une information</a></li>
-                    <li><a class="dropdown-item" href="<?php echo home_url('/gerer-les-Informations') ?>">Voir mes informations</a></li>
+                    <li><a class="dropdown-item" href="<?php echo home_url('/gerer-les-informations') ?>">Voir mes informations</a></li>
                   </ul>
                 </li>
             <?php endif;
