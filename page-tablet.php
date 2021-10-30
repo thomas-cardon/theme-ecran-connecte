@@ -19,15 +19,19 @@
       </header>
       <!-- Content ? -->
       <div class="container">
-        <div class="title">
-          <h1>
-            <?php bloginfo('name'); ?>&nbsp;
-          </h1>
-        </div>
-        <?php remove_filter('the_content', 'wpautop'); the_content(); ?>
+        <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
+          <div class="title">
+            <h1>
+              <?php the_title(); ?>
+            </h1>
+          </div>
+          <p>Test</p>
+          <?php the_content(); ?>
+        <?php endwhile; endif; ?>
       </div>
       <script>
         var host = location.protocol + '//' + location.hostname + '<?php echo URL_PATH ?>';
         console.log('<?php echo URL_PATH ?>');
+        console.log('<?php echo the_content(); ?>');
       </script>
     <?php get_footer('tablet'); ?>

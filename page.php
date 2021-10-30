@@ -1,7 +1,7 @@
 <?php get_header(); ?>
     <!-- MAIN -->
     <main>
-        <div class="container">
+        <div style="background-color: var(--color-primary-900) !important;">
             <section class="content-area content-thin">
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                     <article class="article-full">
