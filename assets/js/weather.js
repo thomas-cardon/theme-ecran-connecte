@@ -105,4 +105,4 @@ $(document).ready(function() {
     $(".temp").css("color", font_color);
   }
 
-}):
+});
