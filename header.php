@@ -67,14 +67,14 @@ if(!in_array('television', $current_user->roles)) : ?>
                     Utilisateurs
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarInformationsDropdown">
-                    <li><a class="dropdown-item" href="<?php echo home_url('/creation-des-comptes') ?>">Créer un utilisateur</a></li>
-                    <li><a class="dropdown-item" href="<?php echo home_url('/gestion-des-utilisateurs') ?>">Voir les utilisateurs</a></li>
+                    <li><a class="dropdown-item" href="<?php echo home_url('/creer-utilisateur') ?>">Créer un utilisateur</a></li>
+                    <li><a class="dropdown-item" href="<?php echo home_url('/liste-utilisateur') ?>">Voir les utilisateurs</a></li>
                   </ul>
                 </li>
             <?php endif;
             if (in_array('administrator', $user_info->roles)) : ?>
                 <li class="nav-item active">
-                    <a class="nav-link" href="<?php echo home_url('gestion-codes-ade') ?>">Code ADE</a>
+                    <a class="nav-link" href="<?php echo home_url('/gestion-codes-ade') ?>">Code ADE</a>
                 </li>
             <?php endif; ?>
             </ul>
