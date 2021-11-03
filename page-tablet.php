@@ -1,4 +1,4 @@
-<?php get_header( 'tablet', array( 'name' => 'Ruhul Amin', 'age' => 23 ) ); ?>
+<?php get_header( 'tablet' ); ?>
     <?php get_sidebar('tablet'); ?>
     <section class="content">
       <header class="tablet">
