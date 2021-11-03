@@ -41,3 +41,7 @@ body {
     border-color: #00558b;
     color: #00558b;
 }
+
+table.schedule tbody {
+  border-top: none !important;
+}
