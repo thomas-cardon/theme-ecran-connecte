@@ -443,7 +443,7 @@ header.tablet > div {
   height: 60vh;
   border-radius: 5px;
   box-shadow: 0 2px 30px rgba(black, 0.2);
-  background: darken(#eff3f9,20%);
+  background: darken !important;
   position: relative;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
@@ -510,12 +510,13 @@ header.tablet > div {
 .location {
   text-align: center;
   font-weight: 800;
-  color: lightpink(red, 25%);
+  color: lightpink !important;
 }
+
 .date1 {
   text-align: center;
   margin-top: 5%;
-  color: lighten(grey, 10%);
+  color: lighten !important;
   font-size: 70%;
 }
 

@@ -4,6 +4,7 @@
 	<div class="wave -two"></div>
 	<div class="wave -three"></div>
 	<div class="weathercon"><i class="fas fa-sun" style='color: #36326;'></i></div>
+	<div class="weathercon"><i class="fas fa-cloud" style='color: #44c3de;'></i></div>
 	<div class="weathercon2"><i class="fas fa-wind" style='color: red;'></i></div>
 	<div class="weathercon3"><i class="fas fa-smog" style='color: red;'></i></div>
 	<div class="weathercon4"><i class="fas fa-cloud-rain" style='color: red;'></i></div>
