@@ -13,4 +13,4 @@
       <?php wp_head(); ?>
   </head>
   <!-- BODY -->
-  <body <?php body_class(); ?>>
+  <body <?php body_class(); ?> style="overflow: hidden;">
