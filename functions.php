@@ -23,21 +23,27 @@ add_action('get_header', 'wp_maintenance_mode');
 function add_scripts()
 {
   $current_user = wp_get_current_user();
-
+  
+  /**
+  * Chargement conditionnel
+  * Cette technique permet de charger les scripts et styles nécessaires à une page spéciale UNIQUEMENT à cette page,
+  * pour améliorer les performances
+  * @author Thomas Cardon
+  */
   if (is_page('tablet-view')) {
     wp_enqueue_script('tablet_search', get_template_directory_uri() . '/assets/js/search.js');
     wp_enqueue_script('tablet_weather', get_template_directory_uri() . '/assets/js/weather.js');
     wp_enqueue_style( 'tablet_theme', get_template_directory_uri() . '/assets/css/tablet.css');
     return;
   }
-
-  //Bootstrap
+    
+  /**
+  * Bootstrap
+  * Mise-à-jour 2021: passage de Bootstrap 4.1.3 à Bootstrap 5
+  * @author Thomas Cardon
+  */
   wp_enqueue_style('bootstrap_css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css');
   wp_enqueue_script('bootstrap_js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js', array(), false, true);
-
-  if(in_array('television', $current_user->roles)) {
-		wp_enqueue_script('refresh_ecran', get_template_directory_uri().'/assets/js/refresh.js');
-	}
 
   wp_enqueue_style('theme_style', get_template_directory_uri() . '/style.css');
 }
