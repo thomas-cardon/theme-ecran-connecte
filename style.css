@@ -21,10 +21,6 @@ body {
   box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
 }
 
-.body_television_ecran {
-    overflow: hidden;
-}
-
 .row {
     margin: 0;
 }
@@ -35,11 +31,6 @@ body {
 
 .title-block {
   font-weight: normal;
-}
-
-.button_presentation_ecran {
-    border-color: #00558b;
-    color: #00558b;
 }
 
 table.schedule tbody {
