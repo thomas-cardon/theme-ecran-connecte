@@ -20,18 +20,13 @@
       <!-- Content ? -->
       <div class="container">
         <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
-          <div class="title">
-            <h1>
-              <?php the_title(); ?>
-            </h1>
-          </div>
-          <p>Test</p>
+          <h1 class="title">
+            <?php the_title(); ?>
+          </h1>
           <?php the_content(); ?>
         <?php endwhile; endif; ?>
       </div>
       <script>
-        var host = location.protocol + '//' + location.hostname + '<?php echo URL_PATH ?>';
-        console.log('<?php echo URL_PATH ?>');
-        console.log('<?php echo the_content(); ?>');
+        const HOST = location.protocol + '//' + location.hostname + '<?php echo URL_PATH ?>';
       </script>
     <?php get_footer('tablet'); ?>

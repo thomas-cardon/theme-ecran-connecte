@@ -32,7 +32,6 @@ function add_scripts()
   */
   if (is_page('tablet-view')) {
     wp_enqueue_script('tablet_search', get_template_directory_uri() . '/assets/js/search.js');
-    wp_enqueue_script('tablet_weather', get_template_directory_uri() . '/assets/js/weather.js');
     wp_enqueue_style( 'tablet_theme', get_template_directory_uri() . '/assets/css/tablet.css');
     return;
   }
