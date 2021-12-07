@@ -3,7 +3,7 @@
     <main>
       <div class="container-fluid px-0" style="background-color: #F2EFF2 !important;">
         <div class="row flex-nowrap">
-            <section class="col px-5 py-3">
+            <section class="col col-9 px-5 py-3">
               <?php the_content(); ?>
               <?php the_widget('WidgetAlert'); ?>
             </section>
