@@ -1,4 +1,4 @@
-<?php get_header( 'tablet', array( 'name' => 'Ruhul Amin', 'age' => 23 ) ); ?>
+<?php get_header( 'tablet' ); ?>
     <?php get_sidebar('tablet'); ?>
     <section class="content">
       <header class="tablet">
@@ -19,15 +19,14 @@
       </header>
       <!-- Content ? -->
       <div class="container">
-        <div class="title">
-          <h1>
-            <?php bloginfo('name'); ?>&nbsp;
+        <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
+          <h1 class="title">
+            <?php the_title(); ?>
           </h1>
-        </div>
-        <?php remove_filter('the_content', 'wpautop'); the_content(); ?>
+          <?php the_content(); ?>
+        <?php endwhile; endif; ?>
       </div>
       <script>
-        var host = location.protocol + '//' + location.hostname + '<?php echo URL_PATH ?>';
-        console.log('<?php echo URL_PATH ?>');
+        const HOST = location.protocol + '//' + location.hostname + '<?php echo URL_PATH ?>';
       </script>
     <?php get_footer('tablet'); ?>

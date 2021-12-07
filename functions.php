@@ -8,8 +8,6 @@ include_once 'inc/customizer/custom_footer.php';
 add_filter('auto_update_plugin', '__return_true');
 add_filter('auto_update_theme', '__return_true');
 
-
-error_reporting(0);
 /*
 function wp_maintenance_mode()
 {
@@ -25,28 +23,30 @@ add_action('get_header', 'wp_maintenance_mode');
 function add_scripts()
 {
   $current_user = wp_get_current_user();
-
+  
+  /**
+  * Chargement conditionnel
+  * Cette technique permet de charger les scripts et styles nécessaires à une page spéciale UNIQUEMENT à cette page,
+  * pour améliorer les performances
+  * @author Thomas Cardon
+  */
   if (is_page('tablet-view')) {
     wp_enqueue_script('tablet_search', get_template_directory_uri() . '/assets/js/search.js');
     wp_enqueue_style( 'tablet_theme', get_template_directory_uri() . '/assets/css/tablet.css');
     return;
   }
-
-  //Bootstrap
+    
+  /**
+  * Bootstrap
+  * Mise-à-jour 2021: passage de Bootstrap 4.1.3 à Bootstrap 5
+  * @author Thomas Cardon
+  */
   wp_enqueue_style('bootstrap_css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css');
   wp_enqueue_script('bootstrap_js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js', array(), false, true);
 
-  if(in_array('television', $current_user->roles)) {
-		wp_enqueue_script('refresh_ecran', get_template_directory_uri().'/assets/js/refresh.js');
-	}
-
-  wp_enqueue_style( 'style_ecran', get_template_directory_uri() . '/style.css');
-
-  wp_enqueue_style( 'header_ecran_theme', get_template_directory_uri() .'/assets/css/header.css');
-  wp_enqueue_style( 'content_ecran_theme', get_template_directory_uri().'/assets/css/content.css');
-  wp_enqueue_style( 'sidebar_ecran_theme', get_template_directory_uri().'/assets/css/sidebar.css');
-  wp_enqueue_style( 'footer_ecran_theme', get_template_directory_uri().'/assets/css/footer.css');
+  wp_enqueue_style('theme_style', get_template_directory_uri() . '/style.css');
 }
+
 add_action('wp_enqueue_scripts', 'add_scripts');
 
 /**
@@ -127,6 +127,7 @@ $wpdb->time_zone = 'Europe/Paris';
 if (function_exists('register_sidebar')) {
     register_sidebar(array(
         'name' => 'Header',
+        'id' => 'sidebar-1',
         'before_widget' => '<li>',
         'after_widget' => '</li>',
         'before_title' => '<h2>',
@@ -134,6 +135,7 @@ if (function_exists('register_sidebar')) {
     ));
     register_sidebar(array(
         'name' => 'Footer',
+        'id' => 'sidebar-2',
         'before_widget' => '<li>',
         'after_widget' => '</li>',
         'before_title' => '<h3>',
@@ -141,6 +143,7 @@ if (function_exists('register_sidebar')) {
     ));
     register_sidebar(array(
         'name' => 'Footer gauche',
+        'id' => 'sidebar-3',
         'before_widget' => '<li>',
         'after_widget' => '</li>',
         'before_title' => '<h3>',
@@ -148,6 +151,7 @@ if (function_exists('register_sidebar')) {
     ));
     register_sidebar(array(
         'name' => 'Footer droite',
+        'id' => 'sidebar-4',
         'before_widget' => '<li>',
         'after_widget' => '</li>',
         'before_title' => '<h3>',
@@ -155,6 +159,7 @@ if (function_exists('register_sidebar')) {
     ));
     register_sidebar(array(
         'name' => 'Colonne Gauche',
+        'id' => 'sidebar-5',
         'before_widget' => '<li>',
         'after_widget' => '</li>',
         'before_title' => '<h3>',
@@ -162,6 +167,7 @@ if (function_exists('register_sidebar')) {
     ));
     register_sidebar(array(
         'name' => 'Colonne Droite',
+        'id' => 'sidebar-6',
         'before_widget' => '<li>',
         'after_widget' => '</li>',
         'before_title' => '<h3>',
