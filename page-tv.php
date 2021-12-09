@@ -9,7 +9,7 @@
           <span id="date" class="ps-2 text-muted">Jeudi<br />1er Janvier 1970</span>
         </div>
         <div class="row flex-nowrap">
-            <section class="px-5 py-5 col col-9" style="margin-top: 5rem;">
+            <section class="px-5 py-5 col col-9">
               <?php the_content(); ?>
               <?php the_widget('WidgetAlert'); ?>
             </section>
