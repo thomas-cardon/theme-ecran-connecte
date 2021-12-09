@@ -2,7 +2,7 @@
     <!-- MAIN -->
     <main>
       <div class="px-0 container-fluid" style="background-color: #F2EFF2 !important;">
-        <div class="flex-row my-4 position-fixed col col-9 d-flex align-items-center">
+        <div class="flex-row my-4 position-sticky col col-9 d-flex align-items-center" style="z-index:1000;background-color: #F2EFF2;top: 0;">
           <img style="padding-left: 3.5rem;" src="<?php echo get_template_directory_uri(); ?>/assets/images/aixmarseille.png" width="auto" height="70px" alt="Logo Aix-Marseille" />
 
           <span id="time">00:00</span>
